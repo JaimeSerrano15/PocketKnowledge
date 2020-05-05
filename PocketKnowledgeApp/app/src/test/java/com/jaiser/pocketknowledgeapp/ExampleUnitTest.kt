@@ -1,4 +1,4 @@
-package com.jaiser.projectpocketknowledge
+package com.jaiser.pocketknowledgeapp
 
 import org.junit.Test
 
