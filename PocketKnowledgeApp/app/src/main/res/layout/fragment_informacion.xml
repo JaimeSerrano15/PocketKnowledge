@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".informacion"
+    android:background="@color/background_color">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/tv_justified_paragraph"
+        android:layout_width="280dp"
+        android:layout_height="389dp"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:text="Pocket Knowledge es una aplicación móvil creada por Empresaurios con el fin de llevar educación, maneras de aprendizaje y estudio al alcance de cualquier joven. \n\n Empresaurios es un grupo de estudiantes de ingeniería informatica de la Universidad Centroamericana José Simeón Cañas UCA, queriendo dejar huella en la educación de nuestro país. \n\n " />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="268dp"
+        android:layout_height="196dp"
+        android:src="@mipmap/edited"
+        app:layout_constraintBottom_toTopOf="@+id/tv_justified_paragraph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
