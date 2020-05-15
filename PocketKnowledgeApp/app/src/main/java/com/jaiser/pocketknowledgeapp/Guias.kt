@@ -5,19 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.jaiser.pocketknowledgeapp.databinding.FragmentGuiasBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class informacion : Fragment() {
+class Guias : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_informacion, container, false)
+        var binding = DataBindingUtil.inflate<FragmentGuiasBinding>(inflater, R.layout.fragment_guias, container, false)
 
+        setup()
+
+        return binding.root
+    }
+
+    fun setup(){
+        activity?.setTitle("Guías de Estudio")
     }
 
 }
