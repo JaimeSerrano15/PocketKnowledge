@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
 
-<fragment
-    android:id="@+id/fragment_first"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:name="com.jaiser.pocketknowledgeapp.FirstFragment"
-    tools:layout="@layout/fragment_first"/>
+    <fragment
+        android:id="@+id/fragment_first_land"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.jaiser.pocketknowledgeapp.FirstFragment"
+        tools:layout="@layout/fragment_first"/>
 
 </LinearLayout>
