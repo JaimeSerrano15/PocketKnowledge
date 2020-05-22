@@ -7,7 +7,7 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,107 +88,108 @@
                     android:id="@+id/search_bar_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginRight="32dp"
                     android:layout_marginLeft="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="16dp"
                     android:queryHint="Busque en las lecciones..." />
 
 
             </LinearLayout>
 
         </LinearLayout>
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/navdrawer_menu_home"/>
+            app:menu="@menu/navdrawer_menu_home" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
-<!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
+    <!--
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:text="¿Qué quieres aprender hoy?"
-            android:textSize="25sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="381dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="¿Qué quieres aprender hoy?"
+                android:textSize="25sp" />
 
-            <Button
-                android:id="@+id/btn_math"
-                android:layout_width="146dp"
-                android:layout_height="163dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/icon"
-                app:layout_constraintBottom_toTopOf="@+id/btn_leng"
-                app:layout_constraintEnd_toStartOf="@+id/btn_cienc"
-                app:layout_constraintHorizontal_bias="0.275"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="381dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp">
 
-            <Button
-                android:id="@+id/btn_cienc"
-                android:layout_width="152dp"
-                android:layout_height="165dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/btn_math"
+                    android:layout_width="146dp"
+                    android:layout_height="163dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/icon"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_leng"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_cienc"
+                    app:layout_constraintHorizontal_bias="0.275"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <Button
-                android:id="@+id/btn_leng"
-                android:layout_width="146dp"
-                android:layout_height="161dp"
-                android:layout_marginLeft="8dp"
-                android:background="@drawable/icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_soc"
-                app:layout_constraintHorizontal_bias="0.359"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.927" />
+                <Button
+                    android:id="@+id/btn_cienc"
+                    android:layout_width="152dp"
+                    android:layout_height="165dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btn_soc"
-                android:layout_width="146dp"
-                android:layout_height="161dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_cienc"
-                app:layout_constraintVertical_bias="0.659" />
+                <Button
+                    android:id="@+id/btn_leng"
+                    android:layout_width="146dp"
+                    android:layout_height="161dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_soc"
+                    app:layout_constraintHorizontal_bias="0.359"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.927" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_soc"
+                    android:layout_width="146dp"
+                    android:layout_height="161dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_cienc"
+                    app:layout_constraintVertical_bias="0.659" />
 
-        <SearchView
-            android:id="@+id/search_bar_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginLeft="32dp"
-            android:queryHint="Busque en las lecciones..." />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <SearchView
+                android:id="@+id/search_bar_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginLeft="32dp"
+                android:queryHint="Busque en las lecciones..." />
 
 
-    </LinearLayout>
--->
+        </LinearLayout>
+    -->
 </layout>

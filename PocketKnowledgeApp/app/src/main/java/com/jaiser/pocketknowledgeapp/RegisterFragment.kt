@@ -7,24 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.jaiser.pocketknowledgeapp.databinding.FragmentLevelBinding
+import com.jaiser.pocketknowledgeapp.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class LevelFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentLevelBinding>(inflater, R.layout.fragment_level, container, false)
+        val binding = DataBindingUtil.inflate<FragmentSecondBinding>(inflater, R.layout.fragment_second, container, false)
+        setup()
 
-        binding.basicButton.setOnClickListener{view:View ->
-            view.findNavController().navigate(R.id.action_levelFragment_to_lessonFragment)
+        binding.registeredButton.setOnClickListener{view: View ->
+            view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
         return binding.root
+    }
+
+    fun setup(){
+        activity?.setTitle("Bienvenido")
     }
 
 }

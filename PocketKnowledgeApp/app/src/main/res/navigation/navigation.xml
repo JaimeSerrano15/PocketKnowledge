@@ -4,13 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     tools:ignore="UnusedNavigation"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.jaiser.pocketknowledgeapp.FirstFragment"
-        android:label="FirstFragment" />
+        android:id="@+id/loginFragment"
+        android:name="com.jaiser.pocketknowledgeapp.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.jaiser.pocketknowledgeapp.SecondFragment"
-        android:label="SecondFragment" />
+        android:id="@+id/registerFragment"
+        android:name="com.jaiser.pocketknowledgeapp.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.jaiser.pocketknowledgeapp.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_levelFragment"
+            app:destination="@id/levelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.jaiser.pocketknowledgeapp.LevelFragment"
+        android:label="fragment_level"
+        tools:layout="@layout/fragment_level" >
+        <action
+            android:id="@+id/action_levelFragment_to_lessonFragment"
+            app:destination="@id/lessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFragment"
+        android:name="com.jaiser.pocketknowledgeapp.LessonFragment"
+        android:label="fragment_lesson"
+        tools:layout="@layout/fragment_lesson" />
 </navigation>
