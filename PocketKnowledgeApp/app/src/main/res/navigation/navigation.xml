@@ -47,4 +47,24 @@
         android:name="com.jaiser.pocketknowledgeapp.LessonFragment"
         android:label="fragment_lesson"
         tools:layout="@layout/fragment_lesson" />
+    <fragment
+        android:id="@+id/configuracion"
+        android:name="com.jaiser.pocketknowledgeapp.Configuracion"
+        android:label="fragment_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.jaiser.pocketknowledgeapp.FavFragment"
+        android:label="fragment_fav"
+        tools:layout="@layout/fragment_fav" />
+    <fragment
+        android:id="@+id/guias"
+        android:name="com.jaiser.pocketknowledgeapp.Guias"
+        android:label="fragment_guias"
+        tools:layout="@layout/fragment_guias" />
+    <fragment
+        android:id="@+id/informacion"
+        android:name="com.jaiser.pocketknowledgeapp.Informacion"
+        android:label="fragment_informacion"
+        tools:layout="@layout/fragment_informacion" />
 </navigation>
