@@ -20,7 +20,7 @@
                 android:layout_height="match_parent"
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/navigation"
-                tools:layout="@layout/fragment_first" />
+                tools:layout="@layout/fragment_home" />
 
         </LinearLayout>
 

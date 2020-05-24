@@ -27,9 +27,9 @@
             android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:paddingTop="20dp"
-            app:srcCompat="@drawable/ic_ac_unit_black_24dp" />
+            app:srcCompat="@drawable/ic_pk" />
 
         <TextView
             android:id="@+id/textView2"
@@ -43,7 +43,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/email_login_editText"
             android:layout_width="300dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
@@ -51,7 +51,7 @@
             android:background="@drawable/enter_round"
             android:ems="10"
             android:hint=" 00000000@gmail.com"
-            android:inputType="textEmailAddress" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/textView3"
@@ -65,7 +65,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/password_login_editText"
             android:layout_width="300dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
