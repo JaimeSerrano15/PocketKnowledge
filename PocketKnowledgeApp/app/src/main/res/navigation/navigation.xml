@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_levelFragment_to_lessonFragment"
             app:destination="@id/lessonFragment" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/lessonFragment"

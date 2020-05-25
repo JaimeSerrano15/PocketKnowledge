@@ -24,18 +24,16 @@ class LoginFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setup()
+
         val binding = DataBindingUtil.inflate<FragmentFirstBinding>(
             inflater,
-            R.layout.fragment_first,
-            container,
-            false
+            R.layout.fragment_first, container, false
         )
+
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
@@ -57,7 +55,10 @@ class LoginFragment : Fragment() {
         viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
             when (authenticationState) {
                 LoginViewModel.AuthenticationState.AUTHENTICATED -> {
-                    val action = LoginFragmentDirections.actionLoginFragmentToHome2(viewModel.username, viewModel.password)
+                    val action = LoginFragmentDirections.actionLoginFragmentToHome2(
+                        viewModel.username,
+                        viewModel.password
+                    )
                     NavHostFragment.findNavController(this).navigate(action)
                 }
                 LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> showErrorMessage()
@@ -71,6 +72,8 @@ class LoginFragment : Fragment() {
         /* binding.loginButton.setOnClickListener{view: View ->
              view.findNavController().navigate(R.id.action_loginFragment_to_home2)
          }*/
+
+        setup()
 
         return binding.root
     }

@@ -3,10 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home2"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Inicio" />
-    <item
         android:id="@+id/favFragment"
         android:icon="@drawable/ic_star_black_24dp"
         android:title="Favoritos" />
@@ -26,4 +22,8 @@
         android:id="@+id/configuracion"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="Ajustes" />
+    <item
+        android:id="@+id/home2"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="Cerrar sesión" />
 </menu>

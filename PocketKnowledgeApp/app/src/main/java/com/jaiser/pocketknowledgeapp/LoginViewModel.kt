@@ -37,11 +37,12 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun passwordIsValidForUsername(username: String, password: String): Boolean {
-        if (username == "jaime" && password == "jaime") {
+        if (username == "jimbo" && password == "jimbo") {
             Log.i("info", "Se ha ingresado a la App")
             return true
         }
         Log.i("info", "No se ha ingresado a la App" + username + password)
         return false
     }
+
 }

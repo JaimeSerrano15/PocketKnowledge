@@ -39,8 +39,7 @@ class Home : Fragment() {
 
         if (args.user != "-" && args.pass != "-") {
             viewModel.authenticate(args.user, args.pass)
-        }
-        else{
+        } else {
 
         }
 
@@ -53,10 +52,29 @@ class Home : Fragment() {
         })
 
         binding.btnMath.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_home2_to_levelFragment)
+            view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("math"))
         }
 
+        binding.btnLeng.setOnClickListener { view: View ->
+            view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("leng"))
+        }
+
+        binding.btnSoc.setOnClickListener { view: View ->
+            view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("soc"))
+        }
+
+        binding.btnCienc.setOnClickListener { view: View ->
+            view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("cienc"))
+        }
+
+
+
+
         return binding.root
+    }
+
+    fun setup() {
+        activity?.setTitle("PocketKnowledge")
     }
 
 
