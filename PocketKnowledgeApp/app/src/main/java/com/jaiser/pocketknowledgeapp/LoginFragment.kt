@@ -9,19 +9,16 @@ import android.view.ViewGroup
 /**
  * A simple [Fragment] subclass.
  */
-class SecondFragment : Fragment() {
+class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setup()
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
-    }
-
-    fun setup(){
-        activity?.setTitle("Bienvenido")
+        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
 }
+
+

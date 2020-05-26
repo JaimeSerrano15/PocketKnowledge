@@ -11,7 +11,7 @@
     android:id="@+id/fragment_first"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.jaiser.pocketknowledgeapp.FirstFragment"
-    tools:layout="@layout/fragment_first"/>
+    android:name="com.jaiser.pocketknowledgeapp.LoginFragment"
+    tools:layout="@layout/fragment_login"/>
 
 </LinearLayout>
