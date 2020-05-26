@@ -23,19 +23,22 @@
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/photo_view"
-                android:layout_width="300dp"
-                android:layout_height="650dp" />
+                android:layout_width="356dp"
+                android:layout_height="675dp"
+                android:scaleType="fitCenter" />
 
             <View
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="3dp"
-                android:background="#ff0000"/>
+                android:background="#ff0000"
+                />
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/photo_view2"
-                android:layout_width="300dp"
-                android:layout_height="650dp"/>
+                android:layout_width="356dp"
+                android:layout_height="675dp"
+                android:scaleType="fitCenter" />
 
 
         </LinearLayout>

@@ -28,8 +28,8 @@ class ContentFragment : Fragment() {
 
         //binding.lessonTv.text = "ESTA ES LA LECCIÓN ${args.lessonId}"
 
-        binding.photoView.setImageResource(R.drawable.info)
-        binding.photoView2.setImageResource(R.drawable.guias)
+        binding.photoView.setImageResource(R.drawable.soc1)
+        binding.photoView2.setImageResource(R.drawable.soc2)
 
 
         return binding.root
