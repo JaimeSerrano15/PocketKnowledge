@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.jaiser.pocketknowledgeapp.databinding.FragmentFirstBinding
+import com.jaiser.pocketknowledgeapp.databinding.FragmentLoginBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -29,11 +29,10 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentFirstBinding>(
+        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater,
-            R.layout.fragment_first, container, false
+            R.layout.fragment_login, container, false
         )
-
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 

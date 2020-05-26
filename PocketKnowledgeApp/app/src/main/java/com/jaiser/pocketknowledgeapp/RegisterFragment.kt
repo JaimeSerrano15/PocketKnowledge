@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.jaiser.pocketknowledgeapp.databinding.FragmentSecondBinding
+import com.jaiser.pocketknowledgeapp.databinding.FragmentRegisterBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -18,7 +18,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentSecondBinding>(inflater, R.layout.fragment_second, container, false)
+        val binding = DataBindingUtil.inflate<FragmentRegisterBinding>(inflater, R.layout.fragment_register, container, false)
         setup()
 
         binding.registeredButton.setOnClickListener{view: View ->
