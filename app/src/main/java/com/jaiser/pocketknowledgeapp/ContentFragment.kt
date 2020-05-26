@@ -26,7 +26,10 @@ class ContentFragment : Fragment() {
 
         val args = ContentFragmentArgs.fromBundle(arguments!!)
 
-        binding.lessonTv.text = "ESTA ES LA LECCIÓN ${args.lessonId}"
+        //binding.lessonTv.text = "ESTA ES LA LECCIÓN ${args.lessonId}"
+
+        binding.photoView.setImageResource(R.drawable.info)
+        binding.photoView2.setImageResource(R.drawable.guias)
 
 
         return binding.root
