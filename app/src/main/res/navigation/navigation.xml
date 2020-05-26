@@ -57,7 +57,11 @@
         android:id="@+id/lessonFragment"
         android:name="com.jaiser.pocketknowledgeapp.LessonFragment"
         android:label="fragment_lesson"
-        tools:layout="@layout/fragment_lesson" />
+        tools:layout="@layout/fragment_lesson" >
+        <action
+            android:id="@+id/action_lessonFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/configuracion"
         android:name="com.jaiser.pocketknowledgeapp.Configuracion"
@@ -78,4 +82,14 @@
         android:name="com.jaiser.pocketknowledgeapp.Informacion"
         android:label="fragment_informacion"
         tools:layout="@layout/fragment_informacion" />
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="com.jaiser.pocketknowledgeapp.ContentFragment"
+        android:label="fragment_content"
+        tools:layout="@layout/fragment_content" >
+        <argument
+            android:name="lesson_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
