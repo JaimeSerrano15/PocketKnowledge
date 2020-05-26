@@ -28,9 +28,9 @@
             android:id="@+id/imageView3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:srcCompat="@drawable/ic_pk"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_pk"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3" />
