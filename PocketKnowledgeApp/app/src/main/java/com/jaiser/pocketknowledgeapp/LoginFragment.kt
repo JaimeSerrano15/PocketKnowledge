@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -15,7 +16,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.textfield.TextInputLayout
 import com.jaiser.pocketknowledgeapp.databinding.FragmentLoginBinding
+import kotlinx.android.synthetic.main.fragment_login.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -37,10 +40,12 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.loginButton.setOnClickListener {
+
             viewModel.authenticate(
-                binding.emailLoginEditText.text.toString(),
-                binding.passwordLoginEditText.text.toString()
-            )
+                binding.etLoginMail.toString(),
+                binding.etLoginPassword.toString()
+                )
+
             Log.i("info", viewModel.authenticationState.value.toString())
         }
         val navController = findNavController()
