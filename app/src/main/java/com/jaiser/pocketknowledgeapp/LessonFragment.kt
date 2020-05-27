@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
@@ -40,9 +41,9 @@ class LessonFragment : Fragment() {
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
 
-        params.setMargins(32,24,32,24)
+        params.setMargins(32, 24, 32, 24)
 
-        for(i in 1..1){
+        for (i in 1..1) {
             val btn = Button(this.context)
 
             btn.setBackgroundResource(R.drawable.rounded_button)
@@ -50,9 +51,18 @@ class LessonFragment : Fragment() {
             btn.text = "Lección $i"
             btn.setTextColor(Color.WHITE)
 
-            btn.setOnClickListener{
-                var lesson_title : String = btn.text.toString()
-                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(i,args.subject, lesson_title)
+            btn.setOnClickListener {
+                Toast.makeText(
+                    this.context,
+                    "Puedes hacer Zoom en las lecciones!",
+                    Toast.LENGTH_SHORT
+                ).show()
+                var lesson_title: String = btn.text.toString()
+                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(
+                    i,
+                    args.subject,
+                    lesson_title
+                )
                 NavHostFragment.findNavController(this).navigate(action)
             }
 
@@ -64,8 +74,9 @@ class LessonFragment : Fragment() {
         return binding.root
     }
 
-    fun setup(){
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.lesson_bar_title)
+    fun setup() {
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.lesson_bar_title)
     }
 
 }
