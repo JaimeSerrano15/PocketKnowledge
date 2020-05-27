@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jaiser.pocketknowledgeapp.databinding.FragmentContentBinding
 
@@ -24,9 +25,9 @@ class ContentFragment : Fragment() {
             false
         )
 
-        setTitle()
-
         val args = ContentFragmentArgs.fromBundle(arguments!!)
+
+        setup(args.lessionTittle)
 
         when (args.subject) {
             "math" -> binding.lessonTv.visibility = View.VISIBLE
@@ -41,8 +42,8 @@ class ContentFragment : Fragment() {
         return binding.root
     }
 
-    fun setTitle(){
-        activity?.setTitle("Contenido")
+    fun setup(lesson_title : String){
+        (activity as AppCompatActivity).supportActionBar?.title = lesson_title
     }
 
 }

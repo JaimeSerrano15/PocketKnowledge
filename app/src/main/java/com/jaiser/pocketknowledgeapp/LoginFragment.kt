@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -83,7 +84,7 @@ class LoginFragment : Fragment() {
     }
 
     fun setup() {
-        activity?.setTitle("Bienvenido")
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
     }
 
     private fun showErrorMessage() {

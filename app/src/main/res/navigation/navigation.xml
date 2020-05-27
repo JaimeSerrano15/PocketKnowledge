@@ -97,5 +97,9 @@
         <argument
             android:name="subject"
             app:argType="string" />
+        <argument
+            android:name="lession_tittle"
+            app:argType="string"
+            android:defaultValue="lesson" />
     </fragment>
 </navigation>

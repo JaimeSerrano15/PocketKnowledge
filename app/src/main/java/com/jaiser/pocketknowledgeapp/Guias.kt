@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jaiser.pocketknowledgeapp.databinding.FragmentGuiasBinding
 
@@ -24,8 +25,8 @@ class Guias : Fragment() {
         return binding.root
     }
 
-    fun setup(){
-        activity?.setTitle("Guías de Estudio")
+    fun setup() {
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.guides_bar_title)
     }
 
 }

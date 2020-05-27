@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import com.jaiser.pocketknowledgeapp.databinding.FragmentLessonBinding
@@ -50,14 +51,21 @@ class LessonFragment : Fragment() {
             btn.setTextColor(Color.WHITE)
 
             btn.setOnClickListener{
-                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(i,args.subject)
+                var lesson_title : String = btn.text.toString()
+                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(i,args.subject, lesson_title)
                 NavHostFragment.findNavController(this).navigate(action)
             }
 
             layout.addView(btn, params)
         }
 
+        setup()
+
         return binding.root
+    }
+
+    fun setup(){
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.lesson_bar_title)
     }
 
 }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.jaiser.pocketknowledgeapp.databinding.FragmentLevelBinding
@@ -23,11 +24,23 @@ class LevelFragment : Fragment() {
         val args = LevelFragmentArgs.fromBundle(arguments!!)
 
 
+
         binding.basicButton.setOnClickListener{view:View ->
             view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject))
         }
 
+        setup(args.subject)
+
         return binding.root
+    }
+
+    fun setup(subject : String){
+        when(subject){
+            "math" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.math_bar_title)
+            "cienc" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.science_bar_title)
+            "soc" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.soc_bar_title)
+            "leng" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.leng_bar_title)
+        }
     }
 
 }

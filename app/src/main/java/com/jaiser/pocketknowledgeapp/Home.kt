@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -69,12 +70,12 @@ class Home : Fragment() {
 
 
 
-
+        setup()
         return binding.root
     }
 
     fun setup() {
-        activity?.setTitle("PocketKnowledge")
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
     }
 
 

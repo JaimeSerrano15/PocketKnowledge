@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jaiser.pocketknowledgeapp.databinding.FragmentInformacionBinding
 
@@ -25,7 +26,7 @@ class Informacion : Fragment() {
     }
 
     fun setup(){
-        activity?.setTitle("Quiénes somos")
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.info_bar_title)
     }
 
 }
