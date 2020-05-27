@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jaiser.pocketknowledgeapp.databinding.FragmentContentBinding
+import com.squareup.picasso.Picasso
 
 /**
  * A simple [Fragment] subclass.
@@ -33,6 +34,7 @@ class ContentFragment : Fragment() {
             "math" -> binding.lessonTv.visibility = View.VISIBLE
             "leng" -> binding.lessonTv.visibility = View.VISIBLE
             "soc" -> {
+
                 binding.photoView.setImageResource(R.drawable.soc1)
                 binding.photoView2.setImageResource(R.drawable.soc2)
             }

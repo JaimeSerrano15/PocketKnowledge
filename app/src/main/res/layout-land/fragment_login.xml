@@ -46,7 +46,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_login_mail"
+                android:id="@+id/mail_login_layout"
                 style="@style/TextLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,15 +64,16 @@
                 app:startIconDrawable="@drawable/ic_mail_black_24dp"
                 tools:ignore="MissingConstraints">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
+                    android:id="@+id/email_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/medium_gap" />
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_login_password"
+                android:id="@+id/password_login_layout"
                 style="@style/TextLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,10 +92,11 @@
                 tools:ignore="MissingConstraints">
 
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
+                    android:id="@+id/password_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/medium_gap" />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

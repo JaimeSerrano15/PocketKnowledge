@@ -79,7 +79,11 @@
         android:id="@+id/guias"
         android:name="com.jaiser.pocketknowledgeapp.Guias"
         android:label="fragment_guias"
-        tools:layout="@layout/fragment_guias" />
+        tools:layout="@layout/fragment_guias" >
+        <action
+            android:id="@+id/action_guias_to_guideContentFragment"
+            app:destination="@id/guideContentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/informacion"
         android:name="com.jaiser.pocketknowledgeapp.Informacion"
@@ -102,4 +106,9 @@
             app:argType="string"
             android:defaultValue="lesson" />
     </fragment>
+    <fragment
+        android:id="@+id/guideContentFragment"
+        android:name="com.jaiser.pocketknowledgeapp.GuideContentFragment"
+        android:label="fragment_guide_content"
+        tools:layout="@layout/fragment_guide_content" />
 </navigation>

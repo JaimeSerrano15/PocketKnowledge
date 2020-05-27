@@ -2,10 +2,8 @@ package com.jaiser.pocketknowledgeapp
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +58,7 @@ class LoginFragment : Fragment() {
         viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
             when (authenticationState) {
                 LoginViewModel.AuthenticationState.AUTHENTICATED -> {
+                    Toast.makeText(this.context, "Bienvenido!", Toast.LENGTH_SHORT).show()
                     val action = LoginFragmentDirections.actionLoginFragmentToHome2(
                         viewModel.username,
                         viewModel.password
@@ -73,10 +72,6 @@ class LoginFragment : Fragment() {
         binding.registerButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
-
-        /* binding.loginButton.setOnClickListener{view: View ->
-             view.findNavController().navigate(R.id.action_loginFragment_to_home2)
-         }*/
 
         setup()
 

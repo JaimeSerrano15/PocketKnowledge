@@ -42,7 +42,7 @@ class LessonFragment : Fragment() {
 
         params.setMargins(32,24,32,24)
 
-        for(i in 1..2){
+        for(i in 1..1){
             val btn = Button(this.context)
 
             btn.setBackgroundResource(R.drawable.rounded_button)
