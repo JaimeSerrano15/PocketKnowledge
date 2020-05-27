@@ -69,6 +69,10 @@ class LoginFragment : Fragment() {
             }
         })
 
+        binding.textView10.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_changePassFragment)
+        }
+
         binding.registerButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -81,6 +85,7 @@ class LoginFragment : Fragment() {
     fun setup() {
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
     }
+
 
     private fun showErrorMessage() {
         Toast.makeText(activity, "Algo salió mal", Toast.LENGTH_SHORT)

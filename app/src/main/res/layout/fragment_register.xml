@@ -66,6 +66,7 @@
             style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             android:layout_marginStart="@dimen/form_margin"
             android:layout_marginEnd="@dimen/form_margin"
             android:hint="@string/constrase_a_text"

@@ -55,4 +55,8 @@
     <string name="favorito_1_text">Favorito 1</string>
     <string name="favorito_2_text">Favorito 2</string>
     <string name="favorito_3">Favorito 3</string>
+    <string name="changePass_tittle">Cambiar contraseña</string>
+    <string name="txt_exPass">Antigua contraseña</string>
+    <string name="newPass_text">Nueva contraseña</string>
+    <string name="change_btn">Cambiar</string>
 </resources>

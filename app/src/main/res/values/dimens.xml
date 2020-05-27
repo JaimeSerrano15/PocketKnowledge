@@ -28,4 +28,5 @@
     <dimen name="dino_gap">500dp</dimen>
     <dimen name="mega_text_size">60sp</dimen>
     <dimen name="bottom_gap">30dp</dimen>
+    <dimen name="semi_medium_gap">28sp</dimen>
 </resources>

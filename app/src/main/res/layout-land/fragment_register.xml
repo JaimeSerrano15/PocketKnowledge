@@ -79,6 +79,7 @@
                 android:layout_marginStart="@dimen/form_margin"
                 android:layout_marginLeft="@dimen/bottom_gap"
                 android:layout_marginTop="@dimen/mini_margin_gap"
+                app:passwordToggleEnabled="true"
                 android:layout_marginEnd="@dimen/form_margin"
                 android:layout_marginRight="@dimen/bottom_gap"
                 android:layout_weight="1"
