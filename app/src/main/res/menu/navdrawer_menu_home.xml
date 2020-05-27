@@ -5,25 +5,21 @@
     <item
         android:id="@+id/favFragment"
         android:icon="@drawable/ic_star_black_24dp"
-        android:title="Favoritos" />
+        android:title="@string/favoritos_text" />
     <item
         android:id="@+id/informacion"
         android:icon="@drawable/ic_info_black_24dp"
-        android:title="Información" />
+        android:title="@string/informaci_n_text" />
     <item
         android:id="@+id/guias"
         android:icon="@drawable/ic_description_black_24dp"
-        android:title="Guías" />
-    <item
-        android:id="@+id/user"
-        android:icon="@drawable/ic_account_circle_black_24dp"
-        android:title="Usuario" />
+        android:title="@string/gu_as_text" />
     <item
         android:id="@+id/configuracion"
         android:icon="@drawable/ic_settings_black_24dp"
-        android:title="Ajustes" />
+        android:title="@string/ajustes_text" />
     <item
         android:id="@+id/home2"
         android:icon="@drawable/ic_exit_to_app_black_24dp"
-        android:title="Cerrar sesión" />
+        android:title="@string/cerrar_sesi_n_text" />
 </menu>

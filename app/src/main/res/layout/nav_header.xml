@@ -12,14 +12,14 @@
 
     <ImageView
         android:id="@+id/logo_navHeader"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/null_gap"
+        android:layout_height="@dimen/null_gap"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_pk"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/todo_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

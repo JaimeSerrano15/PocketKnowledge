@@ -24,15 +24,25 @@ class ContentFragment : Fragment() {
             false
         )
 
+        setTitle()
+
         val args = ContentFragmentArgs.fromBundle(arguments!!)
 
-        //binding.lessonTv.text = "ESTA ES LA LECCIÓN ${args.lessonId}"
-
-        binding.photoView.setImageResource(R.drawable.soc1)
-        binding.photoView2.setImageResource(R.drawable.soc2)
-
+        when (args.subject) {
+            "math" -> binding.lessonTv.visibility = View.VISIBLE
+            "leng" -> binding.lessonTv.visibility = View.VISIBLE
+            "soc" -> {
+                binding.photoView.setImageResource(R.drawable.soc1)
+                binding.photoView2.setImageResource(R.drawable.soc2)
+            }
+            "cienc" -> binding.lessonTv.visibility = View.VISIBLE
+        }
 
         return binding.root
+    }
+
+    fun setTitle(){
+        activity?.setTitle("Contenido")
     }
 
 }

@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_lessonFragment_to_contentFragment"
             app:destination="@id/contentFragment" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/configuracion"
@@ -91,5 +94,8 @@
             android:name="lesson_id"
             app:argType="integer"
             android:defaultValue="0" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
     </fragment>
 </navigation>

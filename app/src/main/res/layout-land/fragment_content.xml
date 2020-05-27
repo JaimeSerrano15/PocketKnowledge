@@ -24,8 +24,8 @@
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/photo_view"
-                android:layout_width="@dimen/titan_gap"
-                android:layout_height="@dimen/bronto_gap"
+                android:layout_width="@dimen/bronto_gap"
+                android:layout_height="@dimen/rex_gap"
                 android:scaleType="fitCenter" />
 
             <View
@@ -35,8 +35,8 @@
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/photo_view2"
-                android:layout_width="@dimen/titan_gap"
-                android:layout_height="@dimen/bronto_gap"
+                android:layout_width="@dimen/bronto_gap"
+                android:layout_height="@dimen/rex_gap"
                 android:scaleType="fitCenter" />
 
             <View
@@ -47,9 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pregunta_de_prueba_text" />
-
-
+                android:text="@string/pregunta_de_prueba_text"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -71,7 +69,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/respuesta_3_text" />
-
 
             </RadioGroup>
 

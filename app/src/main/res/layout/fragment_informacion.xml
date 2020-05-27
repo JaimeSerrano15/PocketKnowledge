@@ -12,12 +12,12 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="268dp"
-            android:layout_height="196dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="@dimen/mega_gap"
+            android:layout_height="@dimen/giga_gap"
+            android:layout_marginStart="@dimen/medium_text_size"
+            android:layout_marginTop="@dimen/medium_text_size"
+            android:layout_marginEnd="@dimen/medium_text_size"
+            android:layout_marginBottom="@dimen/margin_gap"
             android:src="@mipmap/edited"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,11 +27,11 @@
             app:layout_constraintVertical_bias="0.127" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="277dp"
-            android:layout_height="262dp"
-            android:text="Pocket Knowledge es una aplicación móvil creada por el grupo 'Empresaurios' con el fin de llevar educación, maneras de aprendizaje y estudio al alcance de cualquier joven. \n\n Empresaurios es un grupo de estudiantes de ingeniería informatica de la Universidad Centroamericana José Simeón Cañas UCA, queriendo dejar huella en la educación de nuestro país. \n\n "
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:layout_width="@dimen/mega_gap"
+            android:layout_height="@dimen/mega_gap"
+            android:text="@string/pocket_knowledge_es_una_aplicaci_n_m_vil_creada_por_el_grupo_empresaurios_con_el_fin_de_llevar_educaci_n_maneras_de_aprendizaje_y_estudio_al_alcance_de_cualquier_joven_n_n_empresaurios_es_un_grupo_de_estudiantes_de_ingenier_a_informatica_de_la_universidad_centroamericana_jos_sime_n_ca_as_uca_queriendo_dejar_huella_en_la_educaci_n_de_nuestro_pa_s_n_n_text"
+            android:textColor="@color/my_black_color"
+            android:textSize="@dimen/medium_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

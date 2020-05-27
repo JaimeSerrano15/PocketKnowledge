@@ -30,6 +30,9 @@ class LessonFragment : Fragment() {
             false
         )
 
+        val args = LessonFragmentArgs.fromBundle(arguments!!)
+
+
         val layout = binding.lessonLayout
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -38,7 +41,7 @@ class LessonFragment : Fragment() {
 
         params.setMargins(32,24,32,24)
 
-        for(i in 1..10){
+        for(i in 1..2){
             val btn = Button(this.context)
 
             btn.setBackgroundResource(R.drawable.rounded_button)
@@ -47,7 +50,7 @@ class LessonFragment : Fragment() {
             btn.setTextColor(Color.WHITE)
 
             btn.setOnClickListener{
-                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(i)
+                val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(i,args.subject)
                 NavHostFragment.findNavController(this).navigate(action)
             }
 

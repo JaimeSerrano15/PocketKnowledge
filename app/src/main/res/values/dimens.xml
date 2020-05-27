@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_text_size">52sp</dimen>
+    <dimen name="big_gap">100dp</dimen>
+    <dimen name="form_margin">20dp</dimen>
+    <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="huge_gap">150dp</dimen>
+    <dimen name="medium_gap">45dp</dimen>
+    <dimen name="big_text_size">18sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="medium_margin_gap">32dp</dimen>
+    <dimen name="titan_gap">380dp</dimen>
+    <dimen name="medium_text_size">16dp</dimen>
+    <dimen name="mini_margin_gap">8dp</dimen>
+    <dimen name="margin_gap">24dp</dimen>
+    <dimen name="mega_gap">270dp</dimen>
+    <dimen name="giga_gap">200dp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="large_margin">308dp</dimen>
+    <dimen name="angle_gap">180dp</dimen>
+    <dimen name="null_gap">0dp</dimen>
+    <dimen name="bronto_gap">600dp</dimen>
+    <dimen name="minimum_gap">5dp</dimen>
+    <dimen name="rex_gap">675dp</dimen>
+    <dimen name="subtitle_size">25sp</dimen>
+    <dimen name="dino_gap">500dp</dimen>
+    <dimen name="mega_text_size">60sp</dimen>
+    <dimen name="bottom_gap">30dp</dimen>
+</resources>

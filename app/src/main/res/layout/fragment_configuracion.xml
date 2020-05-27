@@ -10,37 +10,13 @@
         android:background="@color/background_color">
 
         <TextView
-            android:id="@+id/change_name"
-            android:layout_width="325dp"
-            android:layout_height="65dp"
-            android:drawableStart="@drawable/ic_launcher"
-            android:drawablePadding="2dp"
-            android:gravity="center"
-            android:text="Cambiar Nombre"
-            android:textAlignment="gravity"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/cardview_dark_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/change_name" />
-
-        <TextView
             android:id="@+id/change_password"
-            android:layout_width="325dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/titan_gap"
+            android:layout_height="@dimen/big_gap"
             android:drawableStart="@drawable/ic_launcher"
-            android:drawablePadding="2dp"
+            android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
-            android:text="Cambiar Contraseña"
+            android:text="@string/cambiar_contrase_a_text"
             android:textAlignment="gravity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +27,7 @@
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/minimum_gap"
             android:background="@color/cardview_dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,12 +35,12 @@
 
         <TextView
             android:id="@+id/send_feedback"
-            android:layout_width="325dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/titan_gap"
+            android:layout_height="@dimen/big_gap"
             android:drawableStart="@drawable/ic_launcher"
-            android:drawablePadding="2dp"
+            android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
-            android:text="Enviar comentarios"
+            android:text="@string/enviar_comentarios_text"
             android:textAlignment="gravity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +51,7 @@
         <View
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/minimum_gap"
             android:background="@color/cardview_dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +59,12 @@
 
         <TextView
             android:id="@+id/sign_out"
-            android:layout_width="325dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/titan_gap"
+            android:layout_height="@dimen/big_gap"
             android:drawableStart="@drawable/ic_launcher"
-            android:drawablePadding="2dp"
+            android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
-            android:text="Cerrar sesión"
+            android:text="@string/cerrar_sesi_n_text"
             android:textAlignment="gravity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +75,7 @@
         <View
             android:id="@+id/view4"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/minimum_gap"
             android:background="@color/cardview_dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

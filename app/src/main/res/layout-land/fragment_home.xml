@@ -22,23 +22,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="@dimen/medium_margin_gap"
                     android:gravity="center"
-                    android:text="¿Qué quieres aprender hoy?"
-                    android:textSize="25sp" />
+                    android:text="@string/qu_quieres_aprender_hoy_text"
+                    android:textSize="@dimen/subtitle_size" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="646dp"
-                    android:layout_height="140dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_width="@dimen/bronto_gap"
+                    android:layout_height="@dimen/huge_gap"
+                    android:layout_marginLeft="@dimen/medium_text_size"
+                    android:layout_marginTop="@dimen/medium_margin_gap"
+                    android:layout_marginRight="@dimen/medium_text_size"
                     android:layout_gravity="center">
 
                     <Button
                         android:id="@+id/btn_cienc"
-                        android:layout_width="129dp"
-                        android:layout_height="120dp"
+                        android:layout_width="@dimen/huge_gap"
+                        android:layout_height="@dimen/big_gap"
                         android:background="@drawable/ic_nuclear_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -49,9 +49,9 @@
 
                     <Button
                         android:id="@+id/btn_leng"
-                        android:layout_width="114dp"
-                        android:layout_height="115dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_width="@dimen/big_gap"
+                        android:layout_height="@dimen/big_gap"
+                        android:layout_marginStart="@dimen/medium_gap"
                         android:background="@drawable/ic_leng"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_weight="1"
@@ -61,8 +61,8 @@
 
                     <Button
                         android:id="@+id/btn_soc"
-                        android:layout_width="122dp"
-                        android:layout_height="119dp"
+                        android:layout_width="@dimen/big_gap"
+                        android:layout_height="@dimen/big_gap"
                         android:background="@drawable/ic_soc"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +74,8 @@
 
                     <Button
                         android:id="@+id/btn_math"
-                        android:layout_width="123dp"
-                        android:layout_height="115dp"
+                        android:layout_width="@dimen/big_gap"
+                        android:layout_height="@dimen/big_gap"
                         android:background="@drawable/ic_math"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +90,8 @@
 
                 <SearchView
                     android:id="@+id/search_bar_home"
-                    android:layout_width="468dp"
-                    android:layout_height="55dp"
+                    android:layout_width="@dimen/dino_gap"
+                    android:layout_height="@dimen/medium_gap"
                     android:layout_gravity="center"
                     android:queryHint="Busque en las lecciones..."
                     tools:layout_editor_absoluteX="54dp"
@@ -111,88 +111,4 @@
             app:menu="@menu/navdrawer_menu_home" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
-    <!--
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:gravity="center"
-                android:text="¿Qué quieres aprender hoy?"
-                android:textSize="25sp" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="381dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginRight="16dp">
-
-                <Button
-                    android:id="@+id/btn_math"
-                    android:layout_width="146dp"
-                    android:layout_height="163dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/icon"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_leng"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_cienc"
-                    app:layout_constraintHorizontal_bias="0.275"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <Button
-                    android:id="@+id/btn_cienc"
-                    android:layout_width="152dp"
-                    android:layout_height="165dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/icon"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/btn_leng"
-                    android:layout_width="146dp"
-                    android:layout_height="161dp"
-                    android:layout_marginLeft="8dp"
-                    android:background="@drawable/icon"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_soc"
-                    app:layout_constraintHorizontal_bias="0.359"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.927" />
-
-                <Button
-                    android:id="@+id/btn_soc"
-                    android:layout_width="146dp"
-                    android:layout_height="161dp"
-                    android:layout_marginEnd="24dp"
-                    android:background="@drawable/icon"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_cienc"
-                    app:layout_constraintVertical_bias="0.659" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <SearchView
-                android:id="@+id/search_bar_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginLeft="32dp"
-                android:queryHint="Busque en las lecciones..." />
-
-
-        </LinearLayout>
-    -->
 </layout>

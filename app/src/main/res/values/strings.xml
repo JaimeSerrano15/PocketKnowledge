@@ -3,4 +3,41 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pocket_knowledge_title">Pocket Knowledge</string>
+    <string name="mail_hint">Correo electronico:</string>
+    <string name="password_hint">Constraseña:</string>
+    <string name="olvide_mi_contrase_a_text">Olvide mi contraseña</string>
+    <string name="ingresar_text">Ingresar</string>
+    <string name="registrarse_text">Registrarse</string>
+    <string name="empresaurios_text">Empresaurios</string>
+    <string name="correo_electronico_text">Correo electronico:</string>
+    <string name="constrase_a_text">Constraseña:</string>
+    <string name="qu_quieres_aprender_hoy_text">¿Qué quieres aprender hoy?</string>
+    <string name="busque_en_las_lecciones_text">Busque en las lecciones...</string>
+    <string name="selecciona_una_lecci_n_text">Selecciona una lección</string>
+    <string name="selecciona_un_nivel_text">Selecciona un nivel</string>
+    <string name="avanzado_text">Avanzado</string>
+    <string name="todo_text">TODO</string>
+    <string name="leccion_text">LECCION</string>
+    <string name="lecci_n_no_disponible_text">Lección no disponible</string>
+    <string name="pregunta_de_prueba_text">Pregunta de Prueba</string>
+    <string name="respuesta_1_text">Respuesta 1</string>
+    <string name="respuesta_2_text">Respuesta 2</string>
+    <string name="respuesta_3_text">Respuesta 3</string>
+    <string name="verificar_text">Verificar</string>
+    <string name="favoritos_text">Favoritos</string>
+    <string name="b_sico_text">Básico</string>
+    <string name="agregar_text">Agregar</string>
+    <string name="matematica_text">Matemática</string>
+    <string name="lenguaje_text">Lenguaje</string>
+    <string name="ciencias_text">Ciencias</string>
+    <string name="sociales_text">Sociales</string>
+    <string name="informaci_n_text">Información</string>
+    <string name="gu_as_text">Guías</string>
+    <string name="ajustes_text">Ajustes</string>
+    <string name="cerrar_sesi_n_text">Cerrar sesión</string>
+    <string name="cambiar_nombre_text">Cambiar Nombre</string>
+    <string name="cambiar_contrase_a_text">Cambiar Contraseña</string>
+    <string name="enviar_comentarios_text">Enviar comentarios</string>
+    <string name="pocket_knowledge_es_una_aplicaci_n_m_vil_creada_por_el_grupo_empresaurios_con_el_fin_de_llevar_educaci_n_maneras_de_aprendizaje_y_estudio_al_alcance_de_cualquier_joven_n_n_empresaurios_es_un_grupo_de_estudiantes_de_ingenier_a_informatica_de_la_universidad_centroamericana_jos_sime_n_ca_as_uca_queriendo_dejar_huella_en_la_educaci_n_de_nuestro_pa_s_n_n_text">Pocket Knowledge es una aplicación móvil creada por el grupo \'Empresaurios\' con el fin de llevar educación, maneras de aprendizaje y estudio al alcance de cualquier joven. \n\n Empresaurios es un grupo de estudiantes de ingeniería informatica de la Universidad Centroamericana José Simeón Cañas UCA, queriendo dejar huella en la educación de nuestro país. \n\n</string>
 </resources>

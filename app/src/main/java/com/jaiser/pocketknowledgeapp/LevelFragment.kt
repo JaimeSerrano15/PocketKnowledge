@@ -20,8 +20,11 @@ class LevelFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentLevelBinding>(inflater, R.layout.fragment_level, container, false)
 
+        val args = LevelFragmentArgs.fromBundle(arguments!!)
+
+
         binding.basicButton.setOnClickListener{view:View ->
-            view.findNavController().navigate(R.id.action_levelFragment_to_lessonFragment)
+            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject))
         }
 
         return binding.root
