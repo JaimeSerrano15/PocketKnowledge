@@ -34,6 +34,19 @@ class Home : Fragment() {
             R.layout.fragment_home, container, false
         )
 
+        setLoginLogic(binding)
+
+        navigationListener(binding)
+
+        setup()
+        return binding.root
+    }
+
+    fun setup() {
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
+    }
+
+    fun setLoginLogic(binding: FragmentHomeBinding){
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         val args = HomeArgs.fromBundle(arguments!!)
@@ -51,7 +64,9 @@ class Home : Fragment() {
                 LoginViewModel.AuthenticationState.UNAUTHENTICATED -> navController.navigate(R.id.loginFragment)
             }
         })
+    }
 
+    fun navigationListener(binding: FragmentHomeBinding){
         binding.btnMath.setOnClickListener { view: View ->
             view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("math"))
         }
@@ -67,15 +82,6 @@ class Home : Fragment() {
         binding.btnCienc.setOnClickListener { view: View ->
             view.findNavController().navigate(HomeDirections.actionHome2ToLevelFragment("cienc"))
         }
-
-
-
-        setup()
-        return binding.root
-    }
-
-    fun setup() {
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
     }
 
 

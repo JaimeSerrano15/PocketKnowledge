@@ -36,6 +36,25 @@ class LoginFragment : Fragment() {
             R.layout.fragment_login, container, false
         )
 
+        setLoginLogic(binding)
+
+        navigationListener(binding)
+
+        setup()
+
+        return binding.root
+    }
+
+    fun setup() {
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
+    }
+
+
+    private fun showErrorMessage() {
+        Toast.makeText(activity, "Algo salió mal", Toast.LENGTH_SHORT)
+    }
+
+    fun setLoginLogic(binding: FragmentLoginBinding){
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.loginButton.setOnClickListener {
@@ -43,7 +62,7 @@ class LoginFragment : Fragment() {
             viewModel.authenticate(
                 binding.mailLoginLayout?.editText?.text.toString(),
                 binding.passwordLoginLayout?.editText?.text.toString()
-                )
+            )
 
             Log.i("info", viewModel.authenticationState.value.toString())
         }
@@ -68,27 +87,13 @@ class LoginFragment : Fragment() {
                 LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> showErrorMessage()
             }
         })
+    }
 
-        binding.textView10.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_changePassFragment)
-        }
+    fun navigationListener(binding: FragmentLoginBinding){
 
         binding.registerButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
-
-        setup()
-
-        return binding.root
-    }
-
-    fun setup() {
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
-    }
-
-
-    private fun showErrorMessage() {
-        Toast.makeText(activity, "Algo salió mal", Toast.LENGTH_SHORT)
     }
 
 }

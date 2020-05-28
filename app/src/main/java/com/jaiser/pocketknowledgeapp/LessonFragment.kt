@@ -34,7 +34,19 @@ class LessonFragment : Fragment() {
 
         val args = LessonFragmentArgs.fromBundle(arguments!!)
 
+        dynamicButtons(binding, args)
 
+        setup()
+
+        return binding.root
+    }
+
+    fun setup() {
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.lesson_bar_title)
+    }
+
+    fun dynamicButtons(binding: FragmentLessonBinding, args: LessonFragmentArgs) {
         val layout = binding.lessonLayout
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -68,15 +80,6 @@ class LessonFragment : Fragment() {
 
             layout.addView(btn, params)
         }
-
-        setup()
-
-        return binding.root
-    }
-
-    fun setup() {
-        (activity as AppCompatActivity).supportActionBar?.title =
-            getString(R.string.lesson_bar_title)
     }
 
 }

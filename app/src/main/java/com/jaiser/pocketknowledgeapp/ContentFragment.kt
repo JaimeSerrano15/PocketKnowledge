@@ -35,22 +35,25 @@ class ContentFragment : Fragment() {
         val args = ContentFragmentArgs.fromBundle(arguments!!)
         setup(args.lessionTittle)
 
-        when (args.subject) {
-            "math" -> binding.lessonTv.visibility = View.VISIBLE
-            "leng" -> binding.lessonTv.visibility = View.VISIBLE
-            "soc" -> {
-                binding.photoView.setImageResource(R.drawable.soc1)
-                binding.photoView2.setImageResource(R.drawable.soc2)
-                //setUpLesson(args.subject, binding)
-            }
-            "cienc" -> binding.lessonTv.visibility = View.VISIBLE
-        }
+        showContent(binding, args)
 
         return binding.root
     }
 
     fun setup(lesson_title: String) {
         (activity as AppCompatActivity).supportActionBar?.title = lesson_title
+    }
+
+    fun showContent(binding: FragmentContentBinding, args: ContentFragmentArgs) {
+        when (args.subject) {
+            "math" -> binding.lessonTv.visibility = View.VISIBLE
+            "leng" -> binding.lessonTv.visibility = View.VISIBLE
+            "soc" -> {
+                binding.photoView.setImageResource(R.drawable.soc1)
+                binding.photoView2.setImageResource(R.drawable.soc2)
+            }
+            "cienc" -> binding.lessonTv.visibility = View.VISIBLE
+        }
     }
 
     private fun setUpLesson(subjet: String, binding: FragmentContentBinding) {

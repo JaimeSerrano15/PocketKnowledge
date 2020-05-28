@@ -24,19 +24,7 @@ class LevelFragment : Fragment() {
 
         val args = LevelFragmentArgs.fromBundle(arguments!!)
 
-
-
-        binding.basicButton.setOnClickListener{view:View ->
-            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject))
-        }
-
-        binding.interButton.setOnClickListener { view ->
-            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.hardButton.setOnClickListener { view ->
-            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
-        }
+        navigationListener(binding, args)
 
         setup(args.subject)
 
@@ -49,6 +37,20 @@ class LevelFragment : Fragment() {
             "cienc" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.science_bar_title)
             "soc" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.soc_bar_title)
             "leng" -> (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.leng_bar_title)
+        }
+    }
+
+    fun navigationListener(binding: FragmentLevelBinding, args: LevelFragmentArgs){
+        binding.basicButton.setOnClickListener{view:View ->
+            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject))
+        }
+
+        binding.interButton.setOnClickListener { view ->
+            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.hardButton.setOnClickListener { view ->
+            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
         }
     }
 

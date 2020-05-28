@@ -27,15 +27,7 @@ class GuideContentFragment : Fragment() {
             false
         )
 
-        val pdfView = binding.pdfView
-
-        pdfView.fromAsset(getName())
-            .password(null)
-            .defaultPage(0)
-            .onPageError { page, _ ->
-                Toast.makeText(this.context, "Error at page: $page", Toast.LENGTH_SHORT).show()
-            }
-            .load()
+        showPdf(binding)
 
         return binding.root
     }
@@ -46,6 +38,18 @@ class GuideContentFragment : Fragment() {
 
     fun setup() {
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.guides_bar_title)
+    }
+
+    fun showPdf(binding: FragmentGuideContentBinding){
+        val pdfView = binding.pdfView
+
+        pdfView.fromAsset(getName())
+            .password(null)
+            .defaultPage(0)
+            .onPageError { page, _ ->
+                Toast.makeText(this.context, "Error at page: $page", Toast.LENGTH_SHORT).show()
+            }
+            .load()
     }
 
 }

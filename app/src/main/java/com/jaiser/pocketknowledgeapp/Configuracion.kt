@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.jaiser.pocketknowledgeapp.databinding.FragmentConfiguracionBinding
 
 /**
@@ -21,6 +22,10 @@ class Configuracion : Fragment() {
 
         var binding = DataBindingUtil.inflate<FragmentConfiguracionBinding>(inflater,
             R.layout.fragment_configuracion, container,false)
+
+        binding.changePassword.setOnClickListener { view ->
+            view.findNavController().navigate(ConfiguracionDirections.actionConfiguracionToChangePassFragment())
+        }
 
         setup()
 
