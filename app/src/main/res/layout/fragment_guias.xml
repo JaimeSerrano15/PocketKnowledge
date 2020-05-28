@@ -11,9 +11,9 @@
 
         <TextView
             android:id="@+id/matematica_textview"
-            android:layout_width="@dimen/titan_gap"
+            android:layout_width="350dp"
             android:layout_height="@dimen/big_gap"
-            android:drawableStart="@drawable/ic_launcher"
+            android:drawableStart="@drawable/ic_insert_drive_file_black_24dp"
             android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
             android:text="@string/matematica_text"
@@ -36,9 +36,9 @@
 
         <TextView
             android:id="@+id/lenguaje_textview"
-            android:layout_width="@dimen/titan_gap"
+            android:layout_width="350dp"
             android:layout_height="@dimen/big_gap"
-            android:drawableStart="@drawable/ic_launcher"
+            android:drawableStart="@drawable/ic_insert_drive_file_black_24dp"
             android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
             android:text="@string/lenguaje_text"
@@ -62,9 +62,9 @@
 
         <TextView
             android:id="@+id/Ciencias"
-            android:layout_width="@dimen/titan_gap"
+            android:layout_width="350dp"
             android:layout_height="@dimen/big_gap"
-            android:drawableStart="@drawable/ic_launcher"
+            android:drawableStart="@drawable/ic_insert_drive_file_black_24dp"
             android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
             android:text="@string/ciencias_text"
@@ -87,9 +87,9 @@
 
         <TextView
             android:id="@+id/Sociales"
-            android:layout_width="@dimen/titan_gap"
+            android:layout_width="350dp"
             android:layout_height="@dimen/big_gap"
-            android:drawableStart="@drawable/ic_launcher"
+            android:drawableStart="@drawable/ic_insert_drive_file_black_24dp"
             android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
             android:text="@string/sociales_text"

@@ -9,48 +9,15 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
-        <TextView
-            android:id="@+id/change_password"
-            android:layout_width="@dimen/titan_gap"
-            android:layout_height="@dimen/big_gap"
-            android:layout_marginBottom="456dp"
-            android:drawableStart="@drawable/ic_edit_black_24dp"
-            android:drawablePadding="@dimen/minimum_gap"
-            android:gravity="center"
-            android:text="@string/cambiar_contrase_a_text"
-            android:textAlignment="gravity"
-            android:textSize="@dimen/text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.483"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="0.0" />
-
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/minimum_gap"
             android:background="@color/cardview_dark_background"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/change_password" />
-
-        <TextView
-            android:id="@+id/send_feedback"
-            android:layout_width="@dimen/titan_gap"
-            android:layout_height="@dimen/big_gap"
-            android:drawableStart="@drawable/ic_feedback_black_24dp"
-            android:drawablePadding="@dimen/minimum_gap"
-            android:textSize="@dimen/text_size"
-            android:gravity="center"
-            android:text="@string/enviar_comentarios_text"
-            android:textAlignment="gravity"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2"
-            app:layout_constraintVertical_bias="0.0" />
 
         <View
             android:id="@+id/view3"
@@ -62,17 +29,52 @@
             app:layout_constraintTop_toBottomOf="@+id/send_feedback" />
 
         <TextView
+            android:id="@+id/send_feedback"
+            android:layout_width="350dp"
+            android:layout_height="@dimen/big_gap"
+            android:drawableStart="@drawable/ic_feedback_black_24dp"
+            android:drawablePadding="@dimen/minimum_gap"
+            android:gravity="center"
+            android:text="@string/enviar_comentarios_text"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/change_password"
+            android:layout_width="350dp"
+            android:layout_height="@dimen/big_gap"
+            android:drawableStart="@drawable/ic_edit_black_24dp"
+            android:drawablePadding="@dimen/minimum_gap"
+            android:gravity="center"
+            android:text="@string/cambiar_contrase_a_text"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
             android:id="@+id/sign_out"
-            android:layout_width="@dimen/titan_gap"
+            android:layout_width="350dp"
             android:layout_height="@dimen/big_gap"
             android:drawableStart="@drawable/ic_exit_to_app_black_48dp"
             android:drawablePadding="@dimen/minimum_gap"
             android:gravity="center"
             android:text="@string/cerrar_sesi_n_text"
-            android:textSize="@dimen/text_size"
             android:textAlignment="gravity"
+            android:textSize="@dimen/text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3"
             app:layout_constraintVertical_bias="0.0" />
