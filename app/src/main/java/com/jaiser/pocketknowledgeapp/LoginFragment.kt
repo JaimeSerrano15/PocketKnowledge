@@ -46,7 +46,8 @@ class LoginFragment : Fragment() {
     }
 
     fun setup() {
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.pocket_knowledge_bar_title)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.pocket_knowledge_bar_title)
     }
 
 
@@ -54,7 +55,7 @@ class LoginFragment : Fragment() {
         Toast.makeText(activity, "Algo salió mal", Toast.LENGTH_SHORT)
     }
 
-    fun setLoginLogic(binding: FragmentLoginBinding){
+    fun setLoginLogic(binding: FragmentLoginBinding) {
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.loginButton.setOnClickListener {
@@ -63,6 +64,7 @@ class LoginFragment : Fragment() {
                 binding.mailLoginLayout?.editText?.text.toString(),
                 binding.passwordLoginLayout?.editText?.text.toString()
             )
+
 
             Log.i("info", viewModel.authenticationState.value.toString())
         }
@@ -84,12 +86,12 @@ class LoginFragment : Fragment() {
                     )
                     NavHostFragment.findNavController(this).navigate(action)
                 }
-                LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> showErrorMessage()
+                LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> Toast.makeText(this.context, "Credenciales erroneas", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
-    fun navigationListener(binding: FragmentLoginBinding){
+    fun navigationListener(binding: FragmentLoginBinding) {
 
         binding.registerButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
