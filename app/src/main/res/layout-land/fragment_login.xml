@@ -24,7 +24,7 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:paddingBottom="@dimen/form_margin"
-                android:text="Pocket Knwoledge"
+                android:text="@string/pocket_knowledge_title"
                 android:textColor="@color/my_black_color"
                 android:textSize="@dimen/mega_text_size" />
 

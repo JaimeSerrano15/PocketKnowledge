@@ -30,8 +30,8 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="4f4f4f" />
-                            <entry key="outputName" value="ic_cien_title" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../cien_title.svg" />
+                            <entry key="outputName" value="ic_soc_title_new" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../soc_title.svg" />
                           </map>
                         </option>
                       </PersistentState>
