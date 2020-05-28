@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.github.chrisbanes.photoview.PhotoView
 import com.jaiser.pocketknowledgeapp.databinding.FragmentContentBinding
@@ -46,13 +47,22 @@ class ContentFragment : Fragment() {
 
     fun showContent(binding: FragmentContentBinding, args: ContentFragmentArgs) {
         when (args.subject) {
-            "math" -> binding.lessonTv.visibility = View.VISIBLE
-            "leng" -> binding.lessonTv.visibility = View.VISIBLE
+            "math" -> {
+                binding.photoView.setImageResource(R.drawable.ma1)
+                binding.photoView2.setImageResource(R.drawable.ma2)
+            }
+            "leng" -> {
+                binding.photoView.setImageResource(R.drawable.leng1)
+                binding.photoView2.setImageResource(R.drawable.leng2)
+            }
             "soc" -> {
                 binding.photoView.setImageResource(R.drawable.soc1)
                 binding.photoView2.setImageResource(R.drawable.soc2)
             }
-            "cienc" -> binding.lessonTv.visibility = View.VISIBLE
+            "cienc" -> {
+                binding.photoView.setImageResource(R.drawable.cien)
+                binding.photoView2.visibility = View.GONE
+            }
         }
     }
 
