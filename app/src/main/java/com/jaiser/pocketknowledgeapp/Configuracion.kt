@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -20,12 +21,12 @@ class Configuracion : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var binding = DataBindingUtil.inflate<FragmentConfiguracionBinding>(inflater,
-            R.layout.fragment_configuracion, container,false)
+        var binding = DataBindingUtil.inflate<FragmentConfiguracionBinding>(
+            inflater,
+            R.layout.fragment_configuracion, container, false
+        )
 
-        binding.changePassword.setOnClickListener { view ->
-            view.findNavController().navigate(ConfiguracionDirections.actionConfiguracionToChangePassFragment())
-        }
+        navigateListeners(binding)
 
         setup()
 
@@ -33,7 +34,23 @@ class Configuracion : Fragment() {
     }
 
     fun setup() {
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.settings_bar_title)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.settings_bar_title)
+    }
+
+    fun navigateListeners(binding: FragmentConfiguracionBinding) {
+        binding.changePassword.setOnClickListener { view ->
+            view.findNavController()
+                .navigate(ConfiguracionDirections.actionConfiguracionToChangePassFragment())
+        }
+
+        binding.signOut.setOnClickListener { view ->
+            view.findNavController()
+                .navigate(ConfiguracionDirections.actionConfiguracionToLoginFragment())
+        }
+        binding.sendFeedback.setOnClickListener { view ->
+            Toast.makeText(this.context, "Proximamente!!", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

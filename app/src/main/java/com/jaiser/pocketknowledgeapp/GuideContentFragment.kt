@@ -27,6 +27,8 @@ class GuideContentFragment : Fragment() {
             false
         )
 
+        setup()
+
         showPdf(binding)
 
         return binding.root

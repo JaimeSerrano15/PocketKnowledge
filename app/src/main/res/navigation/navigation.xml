@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_configuracion_to_changePassFragment"
             app:destination="@id/changePassFragment" />
+        <action
+            android:id="@+id/action_configuracion_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/favFragment"

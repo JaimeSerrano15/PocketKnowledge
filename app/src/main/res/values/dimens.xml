@@ -29,4 +29,6 @@
     <dimen name="mega_text_size">60sp</dimen>
     <dimen name="bottom_gap">30dp</dimen>
     <dimen name="semi_medium_gap">28sp</dimen>
+    <dimen name="icon_home">170dp</dimen>
+    <dimen name="only_math">180dp</dimen>
 </resources>
