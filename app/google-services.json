@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "820315391148",
+    "firebase_url": "https://pocketknowledgeapp-36f06.firebaseio.com",
+    "project_id": "pocketknowledgeapp-36f06",
+    "storage_bucket": "pocketknowledgeapp-36f06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820315391148:android:4296f9eccc72bb55e68b09",
+        "android_client_info": {
+          "package_name": "com.jaiser.pocketknowledgeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820315391148-ltlm8pubbi5su9lqv2j1m4e5ji82ebjr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjHqVUzkT00AqSbS706m3lW4sKlggJaZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820315391148-ltlm8pubbi5su9lqv2j1m4e5ji82ebjr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
