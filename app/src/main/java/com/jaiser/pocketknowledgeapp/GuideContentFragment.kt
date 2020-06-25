@@ -34,6 +34,8 @@ class GuideContentFragment : Fragment() {
         return binding.root
     }
 
+
+
     private fun getName(): String {
         return "kotlin-quick-reference-sheet.pdf"
     }

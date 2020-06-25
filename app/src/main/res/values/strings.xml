@@ -59,4 +59,5 @@
     <string name="txt_exPass">Antigua contraseña</string>
     <string name="newPass_text">Nueva contraseña</string>
     <string name="change_btn">Cambiar</string>
+    <string name="fav">fav</string>
 </resources>

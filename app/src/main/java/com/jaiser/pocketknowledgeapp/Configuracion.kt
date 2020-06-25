@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.jaiser.pocketknowledgeapp.databinding.FragmentConfiguracionBinding
 
 /**
@@ -45,6 +46,7 @@ class Configuracion : Fragment() {
         }
 
         binding.signOut.setOnClickListener { view ->
+            FirebaseAuth.getInstance().signOut()
             view.findNavController()
                 .navigate(ConfiguracionDirections.actionConfiguracionToLoginFragment())
         }

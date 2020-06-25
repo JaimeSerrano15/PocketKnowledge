@@ -48,16 +48,20 @@ class LessonFragment : Fragment() {
 
     fun dynamicButtons(binding: FragmentLessonBinding, args: LessonFragmentArgs) {
         val layout = binding.lessonLayout
+
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
 
+
         params.setMargins(32, 24, 32, 24)
 
-        for (i in 1..1) {
+        for (i in 1..2) {
             val btn = Button(this.context)
+            val favBtn = Button(this.context)
 
+            /*Lesson Button*/
             btn.setBackgroundResource(R.drawable.rounded_button)
             btn.id = i
             btn.text = "Lección $i"
