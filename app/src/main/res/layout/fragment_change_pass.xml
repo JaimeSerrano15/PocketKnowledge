@@ -45,11 +45,17 @@
             app:startIconDrawable="@drawable/ic_lock_open_black_24dp"
             tools:ignore="MissingConstraints">
 
+            <EditText
+                android:id="@+id/new_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"/>
 
-            <com.google.android.material.textfield.TextInputEditText
+
+            <!--<com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_gap" />
+                android:layout_marginTop="@dimen/medium_gap" />-->
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,10 +81,15 @@
             tools:ignore="MissingConstraints">
 
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text" />
+
+            <!--<com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_gap" />
+                android:layout_marginTop="@dimen/medium_gap" />-->
 
         </com.google.android.material.textfield.TextInputLayout>
 

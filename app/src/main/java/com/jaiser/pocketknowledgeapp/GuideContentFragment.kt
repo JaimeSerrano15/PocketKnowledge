@@ -47,6 +47,8 @@ class GuideContentFragment : Fragment() {
     fun showPdf(binding: FragmentGuideContentBinding){
         val pdfView = binding.pdfView
 
+
+
         pdfView.fromAsset(getName())
             .password(null)
             .defaultPage(0)

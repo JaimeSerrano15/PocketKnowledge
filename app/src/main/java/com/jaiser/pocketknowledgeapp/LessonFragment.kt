@@ -96,7 +96,8 @@ class LessonFragment : Fragment() {
             val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(
                 id,
                 args.subject,
-                lesson_title
+                lesson_title,
+                args.level
             )
             NavHostFragment.findNavController(this).navigate(action)
         }

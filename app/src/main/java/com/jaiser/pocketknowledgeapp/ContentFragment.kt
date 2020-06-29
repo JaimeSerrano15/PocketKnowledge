@@ -9,7 +9,9 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.jaiser.pocketknowledgeapp.databinding.FragmentContentBinding
 import com.squareup.picasso.Picasso
 
@@ -19,6 +21,10 @@ import com.squareup.picasso.Picasso
 class ContentFragment : Fragment() {
 
     val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
+    var imagesList = arrayListOf<String>()
+    var question = String()
+    var answers = arrayListOf<String>()
+    val db = FirebaseFirestore.getInstance()
 
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(
@@ -37,13 +43,12 @@ class ContentFragment : Fragment() {
         showContent(binding, args)
 
         setHasOptionsMenu(true)
-
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.fav_menu,menu)
+        inflater?.inflate(R.menu.fav_menu, menu)
     }
 
     fun setup(lesson_title: String) {
@@ -51,10 +56,12 @@ class ContentFragment : Fragment() {
     }
 
     fun showContent(binding: FragmentContentBinding, args: ContentFragmentArgs) {
-        when (args.subject) {
+        getData(args, binding)
+        //setUpLesson(args.subject,binding)
+        /*when (args.subject) {
             "math" -> {
-                binding.photoView.setImageResource(R.drawable.ma1)
-                binding.photoView2.setImageResource(R.drawable.ma2)
+                //binding.photoView.setImageResource(R.drawable.ma1)
+                //binding.photoView2.setImageResource(R.drawable.ma2)
             }
             "leng" -> {
                 binding.photoView.setImageResource(R.drawable.leng1)
@@ -68,10 +75,29 @@ class ContentFragment : Fragment() {
                 binding.photoView.setImageResource(R.drawable.cien)
                 binding.photoView2.visibility = View.GONE
             }
+        }*/
+    }
+
+    private fun getData(args: ContentFragmentArgs, binding: FragmentContentBinding) {
+        val docRef = db.collection(args.level).document(args.lessonId.toString())
+        docRef.get().addOnSuccessListener { document ->
+            if (document != null) {
+                Toast.makeText(this.context, "IMAGENES CARGADAS", Toast.LENGTH_SHORT).show()
+                imagesList = document.get("images") as ArrayList<String>
+                question = document.get("question").toString()
+                answers = document.get("ans") as ArrayList<String>
+                setUpLesson(args.subject, binding)
+            } else {
+                Log.i("info", "No such document")
+            }
         }
+            .addOnFailureListener { exception ->
+                Log.i("info", "get failed with ", exception)
+            }
     }
 
     private fun setUpLesson(subjet: String, binding: FragmentContentBinding) {
+        val index = imagesList.size
         val layout_content = binding.images
 
         val params = LinearLayout.LayoutParams(
@@ -94,7 +120,7 @@ class ContentFragment : Fragment() {
 
         params.setMargins(5, 5, 5, 5)
 
-        for (i in 1..2) {
+        for (i in 1..index) {
             val photo = PhotoView(this.context)
 
             photo.id = i
@@ -102,23 +128,25 @@ class ContentFragment : Fragment() {
             val line = View(this.context)
             line.setBackgroundColor(resources.getColor(R.color.my_dark_gray))
 
-
-            photo.setImageResource(infoList[i - 1])
+            Glide.with(this)
+                .load(imagesList[i-1])
+                .placeholder(R.drawable.soc2)
+                .into(photo)
+            //photo.setImageResource(infoList[i - 1])
 
             layout_content?.addView(photo, params)
             layout_content?.addView(line, line_params)
         }
 
         val question_text = TextView(this.context)
-        question_text.text = "Pregunta de Prueba"
+        question_text.text = question
         layout_content?.addView(question_text)
 
         val question = RadioGroup(this.context)
-        for (i in 0..2) {
+        for (i in 1..answers.size) {
             val option = RadioButton(this.context)
-            option.text = "Respuesta $i"
-            option.id = i
-
+            option.text = answers[i-1]
+            option.id = i-1
             question.addView(option, answer_params)
         }
 

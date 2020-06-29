@@ -115,6 +115,9 @@
             android:name="lession_tittle"
             app:argType="string"
             android:defaultValue="lesson" />
+        <argument
+            android:name="level"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/guideContentFragment"
