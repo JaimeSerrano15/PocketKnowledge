@@ -42,15 +42,18 @@ class LevelFragment : Fragment() {
 
     fun navigationListener(binding: FragmentLevelBinding, args: LevelFragmentArgs){
         binding.basicButton.setOnClickListener{view:View ->
-            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject))
+            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject, args.subject+"one"))
+            Toast.makeText(this.context, "Espere a que carguen las lecciones", Toast.LENGTH_SHORT).show()
         }
 
         binding.interButton.setOnClickListener { view ->
-            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
+            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject, args.subject+"two"))
+            Toast.makeText(this.context, "Espere a que carguen las lecciones", Toast.LENGTH_SHORT).show()
         }
 
         binding.hardButton.setOnClickListener { view ->
-            Toast.makeText(this.context, "Pronto estará disponible! :)", Toast.LENGTH_SHORT).show()
+            view.findNavController().navigate(LevelFragmentDirections.actionLevelFragmentToLessonFragment(args.subject, args.subject+"three"))
+            Toast.makeText(this.context, "Espere a que carguen las lecciones", Toast.LENGTH_SHORT).show()
         }
     }
 

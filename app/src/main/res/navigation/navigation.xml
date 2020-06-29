@@ -64,6 +64,9 @@
         <argument
             android:name="subject"
             app:argType="string" />
+        <argument
+            android:name="level"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/configuracion"
