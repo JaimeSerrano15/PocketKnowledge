@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "820315391148-c5fkjhsnl329n2oqs47khtmkl26gfg3k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jaiser.pocketknowledgeapp",
+            "certificate_hash": "51745bf0841a8e427c8f278311a727d8981f10e8"
+          }
+        },
+        {
           "client_id": "820315391148-ltlm8pubbi5su9lqv2j1m4e5ji82ebjr.apps.googleusercontent.com",
           "client_type": 3
         }
