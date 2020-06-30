@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_login.view.*
 class LoginFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
-    private lateinit var auth : FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +49,10 @@ class LoginFragment : Fragment() {
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
+        binding.forgotPassword?.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
+        }
+
 
         //setLoginLogic(binding)
 
@@ -56,7 +60,7 @@ class LoginFragment : Fragment() {
 
         setup()
 
-        Toast.makeText(this.context, "${FirebaseAuth.getInstance().currentUser?.email.toString()}", Toast.LENGTH_SHORT ).show()
+        //Toast.makeText(this.context, "${FirebaseAuth.getInstance().currentUser?.email.toString()}", Toast.LENGTH_SHORT ).show()
 
         return binding.root
     }
@@ -103,7 +107,11 @@ class LoginFragment : Fragment() {
                     )
                     NavHostFragment.findNavController(this).navigate(action)
                 }
-                LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> Toast.makeText(this.context, "Credenciales erroneas", Toast.LENGTH_SHORT).show()
+                LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> Toast.makeText(
+                    this.context,
+                    "Credenciales erroneas",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }
@@ -113,23 +121,29 @@ class LoginFragment : Fragment() {
         binding.registerButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+
+        binding.forgotPassword?.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
+        }
     }
 
-    fun signInUser(binding: FragmentLoginBinding){
+    fun signInUser(binding: FragmentLoginBinding) {
         val email = binding.mailLoginLayout?.editText?.text.toString()
         val password = binding.passwordLoginLayout?.editText?.text.toString()
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             binding.mailLoginLayout.error = "Por favor ingrese su correo"
             binding.mailLoginLayout.requestFocus()
             return
         }
 
-        if (password.isEmpty()){
+        if (password.isEmpty()) {
             binding.passwordLoginLayout.error = "Por favor ingrese su contraseña"
             binding.passwordLoginLayout.requestFocus()
             return
         }
+
+        //Toast.makeText(this.context, "$email and $password", Toast.LENGTH_SHORT).show()
 
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
             if (task.isSuccessful){

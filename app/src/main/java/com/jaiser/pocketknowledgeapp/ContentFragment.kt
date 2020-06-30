@@ -1,6 +1,7 @@
 package com.jaiser.pocketknowledgeapp
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -41,6 +42,7 @@ class ContentFragment : Fragment() {
         setup(args.lessionTittle)
 
         showContent(binding, args)
+
 
         setHasOptionsMenu(true)
         return binding.root
@@ -129,7 +131,7 @@ class ContentFragment : Fragment() {
             line.setBackgroundColor(resources.getColor(R.color.my_dark_gray))
 
             Glide.with(this)
-                .load(imagesList[i-1])
+                .load(imagesList[i - 1])
                 .placeholder(R.drawable.soc2)
                 .into(photo)
             //photo.setImageResource(infoList[i - 1])
@@ -145,17 +147,25 @@ class ContentFragment : Fragment() {
         val question = RadioGroup(this.context)
         for (i in 1..answers.size) {
             val option = RadioButton(this.context)
-            option.text = answers[i-1]
-            option.id = i-1
+            option.text = answers[i - 1]
+            option.id = i - 1
             question.addView(option, answer_params)
         }
 
 
-        layout_content?.addView(question, question_params)
-
         val verification = Button(this.context)
         verification.text = "Verificar"
 
+        verification.setOnClickListener {
+            val checkId = question.checkedRadioButtonId
+            if (checkId === 0) {
+                verification.setBackgroundColor(Color.GREEN)
+            } else {
+                    verification.setBackgroundColor(Color.RED)
+            }
+        }
+
+        layout_content?.addView(question, question_params)
         layout_content?.addView(verification)
     }
 

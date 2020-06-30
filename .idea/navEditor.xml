@@ -36,6 +36,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_configuracion_to_emailFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_configuracion_to_loginFragment">
                               <value>
                                 <LayoutPositions />
@@ -77,6 +82,18 @@
                           <Point>
                             <option name="x" value="256" />
                             <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="forgotPassFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="291" />
+                            <option name="y" value="793" />
                           </Point>
                         </option>
                       </LayoutPositions>

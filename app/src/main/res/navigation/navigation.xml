@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_loginFragment_to_home2"
             app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassFragment"
+            app:destination="@id/forgotPassFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -135,4 +138,9 @@
         android:id="@+id/emailFragment"
         android:name="com.jaiser.pocketknowledgeapp.EmailFragment"
         android:label="EmailFragment" />
+    <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.jaiser.pocketknowledgeapp.ForgotPassFragment"
+        android:label="fragment_forgot_pass"
+        tools:layout="@layout/fragment_forgot_pass" />
 </navigation>
