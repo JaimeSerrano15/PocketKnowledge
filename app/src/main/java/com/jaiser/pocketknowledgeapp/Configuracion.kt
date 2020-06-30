@@ -51,7 +51,8 @@ class Configuracion : Fragment() {
                 .navigate(ConfiguracionDirections.actionConfiguracionToLoginFragment())
         }
         binding.sendFeedback.setOnClickListener { view ->
-            Toast.makeText(this.context, "Proximamente!!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this.context, "Proximamente!!", Toast.LENGTH_SHORT).show()
+            view.findNavController().navigate(R.id.emailFragment)
         }
     }
 

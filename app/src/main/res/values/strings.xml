@@ -60,4 +60,6 @@
     <string name="newPass_text">Nueva contraseña</string>
     <string name="change_btn">Cambiar</string>
     <string name="fav">fav</string>
+    <string name="env_anos_un_correo_con_tus_comentarios">Envíanos un Correo con tus Comentarios</string>
+    <string name="enviar">ENVIAR</string>
 </resources>

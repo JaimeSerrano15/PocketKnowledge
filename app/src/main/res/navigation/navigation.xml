@@ -79,6 +79,9 @@
         <action
             android:id="@+id/action_configuracion_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_configuracion_to_emailFragment"
+            app:destination="@id/emailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favFragment"
@@ -128,4 +131,8 @@
         android:id="@+id/changePassFragment"
         android:name="com.jaiser.pocketknowledgeapp.ChangePassFragment"
         android:label="ChangePassFragment" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.jaiser.pocketknowledgeapp.EmailFragment"
+        android:label="EmailFragment" />
 </navigation>
