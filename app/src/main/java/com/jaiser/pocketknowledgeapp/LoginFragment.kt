@@ -147,7 +147,9 @@ class LoginFragment : Fragment() {
 
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
             if (task.isSuccessful){
-                NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_home2)
+              //  NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_home2)
+                val action = LoginFragmentDirections.actionLoginFragmentToHome2(password, email)
+                NavHostFragment.findNavController(this).navigate(action)
                 Toast.makeText(this.context, "BIENVENIDO!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this.context, "Credenciales Incorrectas", Toast.LENGTH_SHORT).show()
