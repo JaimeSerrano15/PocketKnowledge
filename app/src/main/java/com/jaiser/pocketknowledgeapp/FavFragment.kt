@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.jaiser.pocketknowledgeapp.databinding.FragmentFavBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,9 +18,12 @@ class FavFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+     var binding = DataBindingUtil.inflate<FragmentFavBinding>(inflater,
+     R.layout.fragment_fav, container, false)
         setup()
-        return inflater.inflate(R.layout.fragment_fav, container, false)
+
+        return binding.root;
     }
 
     fun setup() {

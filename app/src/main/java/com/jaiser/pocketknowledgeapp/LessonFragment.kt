@@ -62,6 +62,7 @@ class LessonFragment : Fragment() {
             getString(R.string.lesson_bar_title)
     }
 
+    @SuppressLint("ResourceAsColor")
     fun dynamicButtons(
         binding: FragmentLessonBinding,
         args: LessonFragmentArgs,
@@ -69,6 +70,7 @@ class LessonFragment : Fragment() {
         name: String
     ) {
         val layout = binding.lessonLayout
+        var favMark : Boolean = false
 
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -101,6 +103,8 @@ class LessonFragment : Fragment() {
             )
             NavHostFragment.findNavController(this).navigate(action)
         }
+
+
 
         layout.addView(btn, params)
     }
@@ -146,7 +150,9 @@ class LessonFragment : Fragment() {
     private fun getLessonDB(collecion : String, binding : FragmentLessonBinding, args: LessonFragmentArgs){
         db.collection(collecion).get().addOnSuccessListener { result ->
             for (document in result) {
+
                 Log.i("info", "${document.id} => ${document.get("name")}")
+
                 dynamicButtons(binding, args, document.id.toInt(), document.get("name").toString())
             }
         }

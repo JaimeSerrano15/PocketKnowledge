@@ -8,6 +8,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -21,11 +22,12 @@ import com.squareup.picasso.Picasso
  */
 class ContentFragment : Fragment() {
 
-    val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
+    //val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
     var imagesList = arrayListOf<String>()
     var question = String()
     var answers = arrayListOf<String>()
     val db = FirebaseFirestore.getInstance()
+     var favMark : Boolean =  false
 
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(
@@ -44,6 +46,9 @@ class ContentFragment : Fragment() {
         showContent(binding, args)
 
 
+
+
+
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -51,6 +56,27 @@ class ContentFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.fav_menu, menu)
+
+        changeFavoriteIcon(menu?.findItem(R.id.fav)!!)
+       
+    }
+
+    fun changeFavoriteIcon(menuItem: MenuItem){
+       var id = if(favMark) R.drawable.ic_favorite_black_24dp
+        else R.drawable.ic_favorite_border_black_24dp
+
+        menuItem.icon = ContextCompat.getDrawable(this.context!!, id)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+              R.id.fav -> {
+                  favMark = !favMark
+                  changeFavoriteIcon(item)
+              }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun setup(lesson_title: String) {
