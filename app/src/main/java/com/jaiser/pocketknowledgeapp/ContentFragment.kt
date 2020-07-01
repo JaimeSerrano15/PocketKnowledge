@@ -158,7 +158,7 @@ class ContentFragment : Fragment() {
 
             Glide.with(this)
                 .load(imagesList[i - 1])
-                .placeholder(R.drawable.icon)
+                .placeholder(R.drawable.placeholder)
                 .into(photo)
             //photo.setImageResource(infoList[i - 1])
 

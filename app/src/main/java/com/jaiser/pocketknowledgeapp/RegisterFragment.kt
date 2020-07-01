@@ -80,10 +80,10 @@ class RegisterFragment : Fragment() {
             if (task.isSuccessful){
                 userID = auth.currentUser!!.uid
                 var documentReference : DocumentReference = fStore.collection("users").document(userID)
-                var user : User = User()
-                user.email = email;
-                user.password = password;
-                user.fav = fav
+                var user = HashMap<String, Any>()
+                user.put("emal", email)
+                user.put("password", password)
+                user.put("fav", fav)
                 documentReference.set(user).addOnSuccessListener( OnSuccessListener<Void>() {
                     fun OnSucess(aVoid : Void){
                         Log.d("Created", "OnSucess: The new profile has been created succesfully")
