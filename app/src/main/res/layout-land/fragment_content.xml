@@ -8,6 +8,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/images"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
@@ -22,61 +23,7 @@
                 android:textSize="@dimen/text_size"
                 android:visibility="gone" />
 
-            <com.github.chrisbanes.photoview.PhotoView
-                android:id="@+id/photo_view"
-                android:layout_width="@dimen/bronto_gap"
-                android:layout_height="@dimen/rex_gap"
-                android:scaleType="fitCenter" />
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/minimum_gap"
-                android:background="@color/my_dark_gray" />
-
-            <com.github.chrisbanes.photoview.PhotoView
-                android:id="@+id/photo_view2"
-                android:layout_width="@dimen/bronto_gap"
-                android:layout_height="@dimen/rex_gap"
-                android:scaleType="fitCenter" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/minimum_gap"
-                android:background="@color/my_dark_gray" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta_de_prueba_text"/>
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/answer_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_1_text" />
-
-                <RadioButton
-                    android:id="@+id/answer_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_2_text" />
-
-                <RadioButton
-                    android:id="@+id/answer_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_3_text" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/btn_radiogroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/verificar_text" />
 
         </LinearLayout>
     </ScrollView>

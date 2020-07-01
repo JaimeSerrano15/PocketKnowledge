@@ -33,14 +33,13 @@ class EmailFragment : Fragment() {
             val destination = "empresaurios2020@gmail.com"
             val subject = binding.subjectEt.text.toString()
             val message = binding.messageEt.text.toString()
-            sendEmail(destination, subject, message)
-            //Toast.makeText(this.context, "$subject , $message", Toast.LENGTH_SHORT).show()
+            sendEmail(destination, subject, message, binding)
         }
 
         return binding.root
     }
 
-    private fun sendEmail(destination: String, subject: String, message: String) {
+    private fun sendEmail(destination: String, subject: String, message: String, binding: FragmentEmailBinding) {
         val mIntent = Intent(Intent.ACTION_SEND)
 
         mIntent.data = Uri.parse("mailto:")
@@ -52,6 +51,8 @@ class EmailFragment : Fragment() {
 
         try {
             startActivity(Intent.createChooser(mIntent, "Choose Email Client..."))
+            binding.subjectEt.text.clear()
+            binding.messageEt.text.clear()
         } catch (e: Exception) {
             Toast.makeText(this.context, e.message, Toast.LENGTH_SHORT).show()
         }

@@ -40,18 +40,6 @@ class LessonFragment : Fragment() {
 
         setLesson(args, binding)
 
-        /*db.collection("mathone").get().addOnSuccessListener { result ->
-            for (document in result) {
-                Log.i("info", "${document.id} => ${document.get("name")}")
-                dynamicButtons(binding, args, document.id.toInt(), document.get("name").toString())
-            }
-        }
-            .addOnFailureListener { exception ->
-                Log.i("info", "Error getting documents: ", exception)
-            }*/
-
-        //dynamicButtons(binding, args)
-
         setup()
 
         return binding.root
@@ -150,9 +138,7 @@ class LessonFragment : Fragment() {
     private fun getLessonDB(collecion : String, binding : FragmentLessonBinding, args: LessonFragmentArgs){
         db.collection(collecion).get().addOnSuccessListener { result ->
             for (document in result) {
-
-                Log.i("info", "${document.id} => ${document.get("name")}")
-
+                Log.i("info", "${document.get("question")}")
                 dynamicButtons(binding, args, document.id.toInt(), document.get("name").toString())
             }
         }

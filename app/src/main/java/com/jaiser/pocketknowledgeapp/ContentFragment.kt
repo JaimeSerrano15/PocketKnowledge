@@ -1,6 +1,7 @@
 package com.jaiser.pocketknowledgeapp
 
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -23,10 +24,11 @@ import com.squareup.picasso.Picasso
 class ContentFragment : Fragment() {
 
     //val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
-    var imagesList = arrayListOf<String>()
-    var question = String()
-    var answers = arrayListOf<String>()
-    val db = FirebaseFirestore.getInstance()
+    private var imagesList = ArrayList<String>()
+    private var question = String()
+    private var answers = arrayListOf<String>()
+    private val db = FirebaseFirestore.getInstance()
+    private var nice = String()
      var favMark : Boolean =  false
 
     @SuppressLint("ResourceAsColor")
@@ -44,9 +46,6 @@ class ContentFragment : Fragment() {
         setup(args.lessionTittle)
 
         showContent(binding, args)
-
-
-
 
 
         setHasOptionsMenu(true)
@@ -68,7 +67,6 @@ class ContentFragment : Fragment() {
         menuItem.icon = ContextCompat.getDrawable(this.context!!, id)
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
               R.id.fav -> {
@@ -85,25 +83,6 @@ class ContentFragment : Fragment() {
 
     fun showContent(binding: FragmentContentBinding, args: ContentFragmentArgs) {
         getData(args, binding)
-        //setUpLesson(args.subject,binding)
-        /*when (args.subject) {
-            "math" -> {
-                //binding.photoView.setImageResource(R.drawable.ma1)
-                //binding.photoView2.setImageResource(R.drawable.ma2)
-            }
-            "leng" -> {
-                binding.photoView.setImageResource(R.drawable.leng1)
-                binding.photoView2.setImageResource(R.drawable.leng2)
-            }
-            "soc" -> {
-                binding.photoView.setImageResource(R.drawable.soc1)
-                binding.photoView2.setImageResource(R.drawable.soc2)
-            }
-            "cienc" -> {
-                binding.photoView.setImageResource(R.drawable.cien)
-                binding.photoView2.visibility = View.GONE
-            }
-        }*/
     }
 
     private fun getData(args: ContentFragmentArgs, binding: FragmentContentBinding) {
@@ -114,6 +93,7 @@ class ContentFragment : Fragment() {
                 imagesList = document.get("images") as ArrayList<String>
                 question = document.get("question").toString()
                 answers = document.get("ans") as ArrayList<String>
+                nice = document.get("nice").toString()
                 setUpLesson(args.subject, binding)
             } else {
                 Log.i("info", "No such document")
@@ -125,7 +105,7 @@ class ContentFragment : Fragment() {
     }
 
     private fun setUpLesson(subjet: String, binding: FragmentContentBinding) {
-        val index = imagesList.size
+        val index = imagesList?.size
         val layout_content = binding.images
 
         val params = LinearLayout.LayoutParams(
@@ -142,7 +122,7 @@ class ContentFragment : Fragment() {
         )
 
         val answer_params = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
 
@@ -160,7 +140,6 @@ class ContentFragment : Fragment() {
                 .load(imagesList[i - 1])
                 .placeholder(R.drawable.placeholder)
                 .into(photo)
-            //photo.setImageResource(infoList[i - 1])
 
             layout_content?.addView(photo, params)
             layout_content?.addView(line, line_params)
@@ -175,24 +154,31 @@ class ContentFragment : Fragment() {
             val option = RadioButton(this.context)
             option.text = answers[i - 1]
             option.id = i - 1
+            if(answers[i-1] == nice){
+                option.id = (i*0) + 7
+            }
             question.addView(option, answer_params)
         }
 
 
         val verification = Button(this.context)
         verification.text = "Verificar"
+        verification.setBackgroundResource(R.drawable.rounded_button)
 
         verification.setOnClickListener {
             val checkId = question.checkedRadioButtonId
-            if (checkId === 0) {
-                verification.setBackgroundColor(Color.GREEN)
+            if (checkId === 7) {
+                verification.setBackgroundResource(R.drawable.rounden_button_green)
+                question.clearCheck()
             } else {
-                    verification.setBackgroundColor(Color.RED)
+                verification.setBackgroundResource(R.drawable.rounded_button_red)
+                question.clearCheck()
             }
         }
 
         layout_content?.addView(question, question_params)
         layout_content?.addView(verification)
     }
+
 
 }
