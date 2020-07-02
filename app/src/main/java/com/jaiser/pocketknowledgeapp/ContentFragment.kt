@@ -14,6 +14,8 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.jaiser.pocketknowledgeapp.databinding.FragmentContentBinding
 import com.squareup.picasso.Picasso
@@ -24,11 +26,16 @@ import com.squareup.picasso.Picasso
 class ContentFragment : Fragment() {
 
     //val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
+
+    lateinit var lesson_name : String
+
     private var imagesList = ArrayList<String>()
     private var question = String()
     private var answers = arrayListOf<String>()
     private val db = FirebaseFirestore.getInstance()
     private var nice = String()
+    private lateinit var auth : FirebaseAuth;
+    private lateinit var userID : String
      var favMark : Boolean =  false
 
     @SuppressLint("ResourceAsColor")
@@ -45,6 +52,10 @@ class ContentFragment : Fragment() {
         val args = ContentFragmentArgs.fromBundle(arguments!!)
         setup(args.lessionTittle)
 
+        lesson_name = args.lessionTittle
+
+        auth = FirebaseAuth.getInstance()
+
         showContent(binding, args)
 
 
@@ -56,26 +67,77 @@ class ContentFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.fav_menu, menu)
 
-        changeFavoriteIcon(menu?.findItem(R.id.fav)!!)
-       
-    }
+        var menu : MenuItem = menu.getItem(0)
+        userID = auth.currentUser!!.uid
 
-    fun changeFavoriteIcon(menuItem: MenuItem){
-       var id = if(favMark) R.drawable.ic_favorite_black_24dp
-        else R.drawable.ic_favorite_border_black_24dp
+        CheckFavState(lesson_name, menu)
 
-        menuItem.icon = ContextCompat.getDrawable(this.context!!, id)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-              R.id.fav -> {
-                  favMark = !favMark
-                  changeFavoriteIcon(item)
-              }
+            R.id.fav -> {
+                favMark = !favMark
+                changeFavoriteIcon(item, lesson_name)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
+
+    fun CheckFavState (lessonName: String, menu : MenuItem) {
+        var currentUser = db.collection("users").document(userID)
+
+        currentUser.get().addOnSuccessListener{document->
+            var favorites = document.get("fav") as ArrayList<String>
+            for(h in favorites){
+                if(h == lessonName){
+                    favMark = true
+                }
+                if(favMark)  menu.icon = ContextCompat.getDrawable(this.context!!, R.drawable.ic_favorite_black_24dp)
+                else menu.icon = ContextCompat.getDrawable(this.context!!, R.drawable.ic_favorite_border_black_24dp)
+                }
+
+            }
+        }
+
+
+    fun changeFavoriteIcon(menuItem: MenuItem, lessonName : String){
+        var id = if(favMark){
+            AddFav(lessonName)
+            R.drawable.ic_favorite_black_24dp
+        }
+        else{
+          DeleteFav(lessonName)
+            R.drawable.ic_favorite_border_black_24dp
+        }
+        menuItem.icon = ContextCompat.getDrawable(this.context!!, id)
+
+    }
+
+    fun AddFav( lessonName: String){
+         var currentUser = db.collection("users").document(userID)
+
+        currentUser.get().addOnSuccessListener{document->
+            var favorites = document.get("fav") as ArrayList<String>
+            favorites.add(lessonName)
+            var documentReference : DocumentReference = db.collection("users").document(document.id)
+            documentReference.update("fav", favorites)
+        }
+
+    }
+
+    fun DeleteFav (lessonName: String){
+        var currentUser = db.collection("users").document(userID)
+
+        currentUser.get().addOnSuccessListener{document->
+            var favorites = document.get("fav") as ArrayList<String>
+            favorites.remove(lessonName)
+            var documentReference : DocumentReference = db.collection("users").document(document.id)
+            documentReference.update("fav", favorites)
+        }
+    }
+
+
 
     fun setup(lesson_title: String) {
         (activity as AppCompatActivity).supportActionBar?.title = lesson_title
