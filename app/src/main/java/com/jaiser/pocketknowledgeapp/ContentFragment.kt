@@ -74,6 +74,8 @@ class ContentFragment : Fragment() {
         var menu : MenuItem = menu.getItem(0)
         userID = auth.currentUser!!.uid
 
+        Log.d("TAG", "Estamos en al leccion de : ${lesson_name}" )
+
         CheckFavState(lesson_name, menu)
     }
 
@@ -143,8 +145,10 @@ class ContentFragment : Fragment() {
                 if (h["lesson"] == lessonName) {
                     Log.d("TAG", "Se va a remover ${h["lesson"]} por que es igual a ${lessonName}")
                     favorites.remove(h)
+                    break;
                 }
             }
+
             var documentReference : DocumentReference = db.collection("users").document(document.id)
             documentReference.update("fav", favorites)
         }
