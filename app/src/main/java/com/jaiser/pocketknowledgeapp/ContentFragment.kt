@@ -231,9 +231,11 @@ class ContentFragment : Fragment() {
             val checkId = question.checkedRadioButtonId
             if (checkId === 7) {
                 verification.setBackgroundResource(R.drawable.rounden_button_green)
+                Toast.makeText(this.context, "Respuesta correcta!!!", Toast.LENGTH_SHORT).show()
                 question.clearCheck()
             } else {
                 verification.setBackgroundResource(R.drawable.rounded_button_red)
+                Toast.makeText(this.context, "Respuesta incorrecta:(, vuelve a intentar", Toast.LENGTH_SHORT).show()
                 question.clearCheck()
             }
         }
