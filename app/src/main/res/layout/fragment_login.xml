@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/form_margin"
-            android:layout_marginTop="@dimen/big_gap"
+            android:layout_marginTop="75dp"
             android:layout_marginEnd="@dimen/form_margin"
             android:hint="@string/password_hint"
             app:passwordToggleEnabled="true"
@@ -101,12 +101,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.79" />
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
+            app:layout_constraintVertical_bias="0.13" />
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="@dimen/huge_gap"
+            android:layout_width="300dp"
             android:layout_height="@dimen/medium_gap"
             android:background="@drawable/bordes_redondos"
             android:text="@string/ingresar_text"
@@ -114,26 +114,11 @@
             android:textSize="@dimen/big_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/registerButton"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.89" />
+            app:layout_constraintTop_toBottomOf="@+id/password_login_layout"
+            app:layout_constraintVertical_bias="0.050000012" />
 
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="@dimen/huge_gap"
-            android:layout_height="@dimen/medium_gap"
-            android:background="@drawable/bordes_redondos"
-            android:text="@string/registrarse_text"
-            android:textColor="@color/my_white_color"
-            android:textSize="@dimen/big_text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/loginButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.89" />
+
 
         <TextView
             android:id="@+id/textView11"
@@ -148,7 +133,35 @@
             app:layout_constraintTop_toTopOf="@+id/textView6"
             app:layout_constraintVertical_bias="0.98" />
 
+        <TextView
+            android:id="@+id/CountTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="@string/no_tienes_cuenta"
+            android:textColor="@color/my_black_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password"
+            app:layout_constraintVertical_bias="0.01" />
 
+        <TextView
+            android:id="@+id/RegisterTxt"
+            android:layout_width="75dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="17dp"
+            android:text="@string/regi"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.67"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password"
+            app:layout_constraintVertical_bias="0.00999999" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

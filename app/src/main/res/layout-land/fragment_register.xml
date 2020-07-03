@@ -48,7 +48,7 @@
                 android:id="@+id/et_register_mail"
                 style="@style/TextLabel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="21dp"
                 android:layout_marginStart="@dimen/form_margin"
                 android:layout_marginLeft="@dimen/bottom_gap"
                 android:layout_marginTop="@dimen/mini_margin_gap"
@@ -75,11 +75,10 @@
                 android:id="@+id/et_register_password"
                 style="@style/TextLabel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:layout_marginStart="@dimen/form_margin"
                 android:layout_marginLeft="@dimen/bottom_gap"
                 android:layout_marginTop="@dimen/mini_margin_gap"
-                app:passwordToggleEnabled="true"
                 android:layout_marginEnd="@dimen/form_margin"
                 android:layout_marginRight="@dimen/bottom_gap"
                 android:layout_weight="1"
@@ -90,6 +89,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/registeredButton"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3"
                 app:layout_constraintVertical_bias="0.685"
+                app:passwordToggleEnabled="true"
                 app:startIconDrawable="@drawable/ic_lock_open_black_24dp"
                 tools:ignore="MissingConstraints">
 
@@ -101,40 +101,52 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/null_gap"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/olvide_mi_contrase_a_text"
-                android:textColor="@color/my_black_color"
-                android:textStyle="bold" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/null_gap"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
 
                 <Button
                     android:id="@+id/registeredButton"
-                    android:layout_width="@dimen/null_gap"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/big_gap"
-                    android:layout_marginRight="@dimen/big_gap"
                     android:layout_weight="1"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="40dp"
                     android:background="@drawable/bordes_redondos"
+                    android:gravity="center"
                     android:text="Registrarse"
                     android:textColor="@color/my_white_color" />
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/CountTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/null_gap"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                android:text="@string/ya_tienes_cuenta"
+                android:textColor="@color/my_black_color"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/SessionTxtTxt"
+                android:text="@string/iniciar_sesi_n"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/null_gap"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/null_gap"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="@string/empresaurios_text"
                 android:textColor="@color/my_black_color" />

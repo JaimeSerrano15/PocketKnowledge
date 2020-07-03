@@ -53,12 +53,12 @@
 
         <Button
             android:id="@+id/send_forgot_bt"
-            android:layout_width="@dimen/huge_gap"
-            android:layout_height="@dimen/medium_gap"
+            android:layout_width="@dimen/giga_gap"
+            android:layout_height="55dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="104dp"
             android:background="@drawable/bordes_redondos"
-            android:text="Recuperar Contraseña"
+            android:text="@string/recuperar_contra"
             android:textColor="@color/my_white_color"
             android:textSize="@dimen/big_text_size"
             app:layout_constraintBottom_toBottomOf="parent"

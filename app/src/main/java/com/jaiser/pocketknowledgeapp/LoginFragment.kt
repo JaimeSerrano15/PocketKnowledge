@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
             signInUser(binding)
         }
 
-        binding.registerButton.setOnClickListener { view ->
+        binding.RegisterTxt?.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
@@ -118,7 +118,7 @@ class LoginFragment : Fragment() {
 
     fun navigationListener(binding: FragmentLoginBinding) {
 
-        binding.registerButton.setOnClickListener { view: View ->
+        binding.RegisterTxt?.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 

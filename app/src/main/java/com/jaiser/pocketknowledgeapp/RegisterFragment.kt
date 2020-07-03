@@ -40,6 +40,10 @@ class RegisterFragment : Fragment() {
             //view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
+        binding.SessionTxt?.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
         auth = FirebaseAuth.getInstance()
         fStore = FirebaseFirestore.getInstance()
 
