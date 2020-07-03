@@ -90,7 +90,11 @@
         android:id="@+id/favFragment"
         android:name="com.jaiser.pocketknowledgeapp.FavFragment"
         android:label="fragment_fav"
-        tools:layout="@layout/fragment_fav" />
+        tools:layout="@layout/fragment_fav" >
+        <action
+            android:id="@+id/action_favFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/guias"
         android:name="com.jaiser.pocketknowledgeapp.Guias"
@@ -114,9 +118,6 @@
             android:name="lesson_id"
             app:argType="integer"
             android:defaultValue="0" />
-        <argument
-            android:name="subject"
-            app:argType="string" />
         <argument
             android:name="lession_tittle"
             app:argType="string"

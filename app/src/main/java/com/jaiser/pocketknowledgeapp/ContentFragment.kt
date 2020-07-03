@@ -28,6 +28,8 @@ class ContentFragment : Fragment() {
     //val infoList = mutableListOf(R.drawable.soc1, R.drawable.soc2)
 
     lateinit var lesson_name : String
+    lateinit var level : String
+    lateinit var lessonid : String
 
     private var imagesList = ArrayList<String>()
     private var question = String()
@@ -53,6 +55,8 @@ class ContentFragment : Fragment() {
         setup(args.lessionTittle)
 
         lesson_name = args.lessionTittle
+        level = args.level
+        lessonid = args.lessonId.toString()
 
         auth = FirebaseAuth.getInstance()
 
@@ -71,14 +75,13 @@ class ContentFragment : Fragment() {
         userID = auth.currentUser!!.uid
 
         CheckFavState(lesson_name, menu)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.fav -> {
                 favMark = !favMark
-                changeFavoriteIcon(item, lesson_name)
+                changeFavoriteIcon(item)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -88,9 +91,10 @@ class ContentFragment : Fragment() {
         var currentUser = db.collection("users").document(userID)
 
         currentUser.get().addOnSuccessListener{document->
-            var favorites = document.get("fav") as ArrayList<String>
+            var favorites = document.get("fav") as ArrayList<HashMap<String, String>>
+
             for(h in favorites){
-                if(h == lessonName){
+                if(h["lesson"] == lessonName){
                     favMark = true
                 }
                 if(favMark)  menu.icon = ContextCompat.getDrawable(this.context!!, R.drawable.ic_favorite_black_24dp)
@@ -101,25 +105,29 @@ class ContentFragment : Fragment() {
         }
 
 
-    fun changeFavoriteIcon(menuItem: MenuItem, lessonName : String){
+    fun changeFavoriteIcon(menuItem: MenuItem){
         var id = if(favMark){
-            AddFav(lessonName)
+            AddFav(lesson_name, level, lessonid)
             R.drawable.ic_favorite_black_24dp
         }
         else{
-          DeleteFav(lessonName)
+          DeleteFav(lesson_name)
             R.drawable.ic_favorite_border_black_24dp
         }
         menuItem.icon = ContextCompat.getDrawable(this.context!!, id)
 
     }
 
-    fun AddFav( lessonName: String){
+    fun AddFav( lessonName: String, level: String, id : String){
          var currentUser = db.collection("users").document(userID)
 
         currentUser.get().addOnSuccessListener{document->
-            var favorites = document.get("fav") as ArrayList<String>
-            favorites.add(lessonName)
+            var favorites = document.get("fav") as ArrayList<Any>
+
+            var fav = mapOf<String, String>("nivel" to level, "lesson" to lessonName, "id" to id)
+                Log.d("TAG", "nivel: ${fav["nivel"]} leccion ${fav["lesson"]}")
+
+            favorites.add(fav)
             var documentReference : DocumentReference = db.collection("users").document(document.id)
             documentReference.update("fav", favorites)
         }
@@ -130,8 +138,13 @@ class ContentFragment : Fragment() {
         var currentUser = db.collection("users").document(userID)
 
         currentUser.get().addOnSuccessListener{document->
-            var favorites = document.get("fav") as ArrayList<String>
-            favorites.remove(lessonName)
+            var favorites = document.get("fav") as ArrayList<HashMap<String, String>>
+            for(h in favorites) {
+                if (h["lesson"] == lessonName) {
+                    Log.d("TAG", "Se va a remover ${h["lesson"]} por que es igual a ${lessonName}")
+                    favorites.remove(h)
+                }
+            }
             var documentReference : DocumentReference = db.collection("users").document(document.id)
             documentReference.update("fav", favorites)
         }
@@ -156,7 +169,7 @@ class ContentFragment : Fragment() {
                 question = document.get("question").toString()
                 answers = document.get("ans") as ArrayList<String>
                 nice = document.get("nice").toString()
-                setUpLesson(args.subject, binding)
+                setUpLesson(binding)
             } else {
                 Log.i("info", "No such document")
             }
@@ -166,7 +179,7 @@ class ContentFragment : Fragment() {
             }
     }
 
-    private fun setUpLesson(subjet: String, binding: FragmentContentBinding) {
+    private fun setUpLesson( binding: FragmentContentBinding) {
         val index = imagesList?.size
         val layout_content = binding.images
 

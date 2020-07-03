@@ -57,8 +57,8 @@ class RegisterFragment : Fragment() {
     fun signUpUser(binding: FragmentRegisterBinding) {
         val email = binding.etRegisterMail?.editText?.text.toString()
         val password = binding.etRegisterPassword?.editText?.text.toString()
-        val fav : ArrayList<String> = ArrayList<String>()
-        fav.add("")
+        val fav : ArrayList<HashMap<String, String>> = ArrayList<HashMap<String, String>>()
+
 
         if(email.isEmpty()){
             binding.etRegisterMail.error = "Por favor ingrese su correo."
@@ -85,7 +85,7 @@ class RegisterFragment : Fragment() {
                 userID = auth.currentUser!!.uid
                 var documentReference : DocumentReference = fStore.collection("users").document(userID)
                 var user = HashMap<String, Any>()
-                user.put("emal", email)
+                user.put("email", email)
                 user.put("password", password)
                 user.put("fav", fav)
                 documentReference.set(user).addOnSuccessListener( OnSuccessListener<Void>() {

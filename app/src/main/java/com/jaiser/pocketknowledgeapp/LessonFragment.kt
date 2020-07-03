@@ -58,7 +58,7 @@ class LessonFragment : Fragment() {
         name: String
     ) {
         val layout = binding.lessonLayout
-        var favMark : Boolean = false
+
 
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -68,7 +68,6 @@ class LessonFragment : Fragment() {
         params.setMargins(32, 24, 32, 24)
 
         val btn = Button(this.context)
-        val favBtn = Button(this.context)
 
         /*Lesson Button*/
         btn.setBackgroundResource(R.drawable.rounded_button)
@@ -85,7 +84,6 @@ class LessonFragment : Fragment() {
             var lesson_title: String = btn.text.toString()
             val action = LessonFragmentDirections.actionLessonFragmentToContentFragment(
                 id,
-                args.subject,
                 lesson_title,
                 args.level
             )
