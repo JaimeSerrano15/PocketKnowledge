@@ -53,14 +53,7 @@ class LoginFragment : Fragment() {
             view.findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
         }
 
-
-        //setLoginLogic(binding)
-
-        //navigationListener(binding)
-
         setup()
-
-        //Toast.makeText(this.context, "${FirebaseAuth.getInstance().currentUser?.email.toString()}", Toast.LENGTH_SHORT ).show()
 
         return binding.root
     }
@@ -71,61 +64,6 @@ class LoginFragment : Fragment() {
             getString(R.string.pocket_knowledge_bar_title)
     }
 
-
-    private fun showErrorMessage() {
-        Toast.makeText(activity, "Algo salió mal", Toast.LENGTH_SHORT)
-    }
-
-    fun setLoginLogic(binding: FragmentLoginBinding) {
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
-        binding.loginButton.setOnClickListener {
-
-            viewModel.authenticate(
-                binding.mailLoginLayout?.editText?.text.toString(),
-                binding.passwordLoginLayout?.editText?.text.toString()
-            )
-
-
-            Log.i("info", viewModel.authenticationState.value.toString())
-        }
-        val navController = findNavController()
-
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            viewModel.refuseAuthentication()
-            navController.popBackStack(R.id.home2, false)
-        }
-
-
-        viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
-            when (authenticationState) {
-                LoginViewModel.AuthenticationState.AUTHENTICATED -> {
-                    Toast.makeText(this.context, "Bienvenido!", Toast.LENGTH_SHORT).show()
-                    val action = LoginFragmentDirections.actionLoginFragmentToHome2(
-                        viewModel.username,
-                        viewModel.password
-                    )
-                    NavHostFragment.findNavController(this).navigate(action)
-                }
-                LoginViewModel.AuthenticationState.INVALID_AUTHENTICATION -> Toast.makeText(
-                    this.context,
-                    "Credenciales erroneas",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
-    }
-
-    fun navigationListener(binding: FragmentLoginBinding) {
-
-        binding.RegisterTxt?.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
-        }
-
-        binding.forgotPassword?.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
-        }
-    }
 
     fun signInUser(binding: FragmentLoginBinding) {
         val email = binding.mailLoginLayout?.editText?.text.toString()
@@ -142,8 +80,6 @@ class LoginFragment : Fragment() {
             binding.passwordLoginLayout.requestFocus()
             return
         }
-
-        //Toast.makeText(this.context, "$email and $password", Toast.LENGTH_SHORT).show()
 
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
             if (task.isSuccessful){

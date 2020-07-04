@@ -44,8 +44,6 @@ class Home : Fragment() {
             navController.navigate(R.id.loginFragment)
         }
 
-        //setLoginLogic(binding)
-
         navigationListener(binding)
 
         setup()
@@ -58,25 +56,6 @@ class Home : Fragment() {
     }
 
 
-    fun setLoginLogic(binding: FragmentHomeBinding){
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
-        val args = HomeArgs.fromBundle(arguments!!)
-
-        if (args.user != "-" && args.pass != "-") {
-            viewModel.authenticate(args.user, args.pass)
-        } else {
-
-        }
-
-        val navController = findNavController()
-
-        viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
-            when (authenticationState) {
-                LoginViewModel.AuthenticationState.UNAUTHENTICATED -> navController.navigate(R.id.loginFragment)
-            }
-        })
-    }
 
     fun navigationListener(binding: FragmentHomeBinding){
         binding.btnMath.setOnClickListener { view: View ->
