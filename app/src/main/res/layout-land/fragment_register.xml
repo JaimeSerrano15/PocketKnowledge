@@ -82,7 +82,7 @@
                 android:layout_marginEnd="@dimen/form_margin"
                 android:layout_marginRight="@dimen/bottom_gap"
                 android:layout_weight="1"
-                android:hint="@string/constrase_a_text"
+                android:hint="Contraseña. Mínimo 6 caracteres."
                 android:inputType="textPassword"
                 app:boxStrokeColor="@color/my_black_color"
                 app:hintTextColor="@color/my_black_color"

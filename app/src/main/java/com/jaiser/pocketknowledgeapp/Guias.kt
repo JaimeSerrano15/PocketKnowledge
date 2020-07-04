@@ -26,7 +26,8 @@ class Guias : Fragment() {
         setup()
 
         binding.matematicaTextview.setOnClickListener { view ->
-            view.findNavController().navigate(GuiasDirections.actionGuiasToGuideContentFragment())
+            Toast.makeText(this.context, "De momento está vacío! :(", Toast.LENGTH_SHORT).show()
+            //view.findNavController().navigate(GuiasDirections.actionGuiasToGuideContentFragment())
         }
 
         binding.Ciencias.setOnClickListener {

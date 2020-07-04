@@ -92,9 +92,6 @@ class ChangePassFragment : Fragment() {
             Toast.makeText(this.context, "Por favor llene todos los espacios", Toast.LENGTH_SHORT)
                 .show()
         }
-
-
-        //Toast.makeText(this.context, "$oldPass and $newPass", Toast.LENGTH_SHORT).show()
     }
 
 }

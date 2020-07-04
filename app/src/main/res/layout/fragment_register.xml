@@ -67,7 +67,7 @@
             android:layout_marginStart="@dimen/form_margin"
             android:layout_marginTop="75dp"
             android:layout_marginEnd="@dimen/form_margin"
-            android:hint="@string/constrase_a_text"
+            android:hint="Contraseña. Mínimo 6 Caracteres."
             app:boxStrokeColor="@color/my_black_color"
             app:hintTextColor="@color/my_black_color"
             app:layout_constraintEnd_toEndOf="parent"
