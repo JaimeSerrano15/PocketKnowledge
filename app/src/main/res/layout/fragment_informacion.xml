@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="@dimen/mega_gap"
@@ -27,15 +28,29 @@
             app:layout_constraintVertical_bias="0.127" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="@dimen/mega_gap"
-            android:layout_height="@dimen/mega_gap"
+            android:id="@+id/justifiedTextView"
+            android:layout_width="269dp"
+            android:layout_height="242dp"
             android:text="@string/pocket_knowledge_es_una_aplicaci_n_m_vil_creada_por_el_grupo_empresaurios_con_el_fin_de_llevar_educaci_n_maneras_de_aprendizaje_y_estudio_al_alcance_de_cualquier_joven_n_n_empresaurios_es_un_grupo_de_estudiantes_de_ingenier_a_informatica_de_la_universidad_centroamericana_jos_sime_n_ca_as_uca_queriendo_dejar_huella_en_la_educaci_n_de_nuestro_pa_s_n_n_text"
             android:textColor="@color/my_black_color"
             android:textSize="@dimen/medium_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Copyright (c) 2020 Empresaurios. Under GNU GLP v3 license"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/justifiedTextView"
+            app:layout_constraintVertical_bias="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

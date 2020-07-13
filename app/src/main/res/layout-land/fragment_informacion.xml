@@ -31,8 +31,8 @@
                 app:layout_constraintVertical_bias="0.127" />
 
             <com.codesgood.views.JustifiedTextView
-                android:layout_width="@dimen/titan_gap"
-                android:layout_height="@dimen/large_margin"
+                android:layout_width="378dp"
+                android:layout_height="204dp"
                 android:layout_marginStart="@dimen/medium_text_size"
                 android:layout_marginTop="@dimen/margin_gap"
                 android:layout_marginEnd="@dimen/medium_text_size"
